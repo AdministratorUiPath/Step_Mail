@@ -1,0 +1,81 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "iMaxDay&Sequence_1",
+        "bFlg&Sequence_1",
+        "sKeyDay&Sequence_1",
+        "d配信スケージュール&Sequence_1",
+        "b連完了ファイル&Sequence_1",
+        "sFIleName&Sequence_1",
+        "sFilePath&Sequence_1",
+        "dc設定ファイル&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argStr処理記録フォルダ",
+        "argStr設定シート名",
+        "argStr設定ファイルパス"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/10_AsahiTsuhan/06FDM/GFDM0100.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "b&Flowchart_1",
+        "a&Flowchart_1",
+        "dicRenkeiData&Flowchart_1",
+        "iCnt&Flowchart_1",
+        "sHaisoDay&Flowchart_1",
+        "iDMVal&Flowchart_1",
+        "sSaveFileName&Flowchart_1",
+        "sOutPutPath&Flowchart_1",
+        "sCount&Flowchart_1",
+        "bステップファイル&Flowchart_1",
+        "b連携ファイル&Sequence_17",
+        "sFIleName&Sequence_17",
+        "sFilePath&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argSKeyDay",
+        "argDc設定ファイル",
+        "argD配信スケージュール"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/30_配信スケージュール/配信スケージュール取得.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Linking&Sequence_1",
+        "column&Sequence_1",
+        "row&Sequence_1",
+        "i&Sequence_1",
+        "sFIleName&Sequence_1",
+        "sKeyDay&Sequence_1",
+        "gExcel&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argDc設定ファイル",
+        "argD配信スケージュール",
+        "argFlg",
+        "argSKeyDay",
+        "argIMaxDay"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
