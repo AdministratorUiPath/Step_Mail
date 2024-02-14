@@ -4057,7 +4057,7 @@
           "lib/net5.0-windows7.0/UiPath.Activities.RuntimeGovernance.dll": {}
         }
       },
-      "UiPath.CodedWorkflows/23.2.0-alpha.3503132": {
+      "UiPath.CodedWorkflows/23.10.2": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
@@ -4065,10 +4065,14 @@
           "System.ValueTuple": "4.5.0"
         },
         "compile": {
-          "lib/net6.0-windows7.0/_._": {}
+          "lib/net6.0-windows7.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0-windows7.0/UiPath.CodedWorkflows.dll": {}
+          "lib/net6.0-windows7.0/UiPath.CodedWorkflows.dll": {
+            "related": ".xml"
+          }
         },
         "resource": {
           "lib/net6.0-windows7.0/de/UiPath.CodedWorkflows.resources.dll": {
@@ -9220,7 +9224,7 @@
           "lib/net5.0-windows7.0/UiPath.Activities.RuntimeGovernance.dll": {}
         }
       },
-      "UiPath.CodedWorkflows/23.2.0-alpha.3503132": {
+      "UiPath.CodedWorkflows/23.10.2": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
@@ -9228,10 +9232,14 @@
           "System.ValueTuple": "4.5.0"
         },
         "compile": {
-          "lib/net6.0-windows7.0/_._": {}
+          "lib/net6.0-windows7.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0-windows7.0/UiPath.CodedWorkflows.dll": {}
+          "lib/net6.0-windows7.0/UiPath.CodedWorkflows.dll": {
+            "related": ".xml"
+          }
         },
         "resource": {
           "lib/net6.0-windows7.0/de/UiPath.CodedWorkflows.resources.dll": {
@@ -19184,14 +19192,15 @@
         "uipath.activities.runtimegovernance.nuspec"
       ]
     },
-    "UiPath.CodedWorkflows/23.2.0-alpha.3503132": {
-      "sha512": "pP1u2j5pST91Xjo/VAZfTCrXHNIeC33xG4M4u5KeLHRvXBNRW1wvmah+YKJiclpzrpEU1ozkzFlqdRdXlbblEg==",
+    "UiPath.CodedWorkflows/23.10.2": {
+      "sha512": "m+BelgPDzvJdToT+s2ZPp9SmUh6nHoV3Y6IxtGyZlJTEJBjxAFB89sf6ESj4dEfvtCjjVks2eq6iWJkXWSjs8g==",
       "type": "package",
-      "path": "uipath.codedworkflows/23.2.0-alpha.3503132",
+      "path": "uipath.codedworkflows/23.10.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0-windows7.0/UiPath.CodedWorkflows.dll",
+        "lib/net6.0-windows7.0/UiPath.CodedWorkflows.xml",
         "lib/net6.0-windows7.0/de/UiPath.CodedWorkflows.resources.dll",
         "lib/net6.0-windows7.0/es-MX/UiPath.CodedWorkflows.resources.dll",
         "lib/net6.0-windows7.0/es/UiPath.CodedWorkflows.resources.dll",
@@ -19205,6 +19214,7 @@
         "lib/net6.0-windows7.0/zh-CN/UiPath.CodedWorkflows.resources.dll",
         "lib/net6.0-windows7.0/zh-TW/UiPath.CodedWorkflows.resources.dll",
         "lib/net6.0/UiPath.CodedWorkflows.dll",
+        "lib/net6.0/UiPath.CodedWorkflows.xml",
         "lib/net6.0/de/UiPath.CodedWorkflows.resources.dll",
         "lib/net6.0/es-MX/UiPath.CodedWorkflows.resources.dll",
         "lib/net6.0/es/UiPath.CodedWorkflows.resources.dll",
@@ -19217,7 +19227,7 @@
         "lib/net6.0/tr/UiPath.CodedWorkflows.resources.dll",
         "lib/net6.0/zh-CN/UiPath.CodedWorkflows.resources.dll",
         "lib/net6.0/zh-TW/UiPath.CodedWorkflows.resources.dll",
-        "uipath.codedworkflows.23.2.0-alpha.3503132.nupkg.sha512",
+        "uipath.codedworkflows.23.10.2.nupkg.sha512",
         "uipath.codedworkflows.nuspec"
       ]
     },
@@ -20931,6 +20941,7 @@
   "projectFileDependencyGroups": {
     "": [],
     "net6.0-windows7.0": [
+      "UiPath.CodedWorkflows >= 23.10.2 <= 23.10.2",
       "UiPath.Excel.Activities >= 2.20.2 <= 2.20.2",
       "UiPath.Mail.Activities >= 1.20.3 <= 1.20.3",
       "UiPath.System.Activities >= 23.4.5 <= 23.4.5",
@@ -20939,19 +20950,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\99999\\.nuget\\packages\\": {}
+    "C:\\Users\\hirabaru\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "ステップメール_通販管理システム顧客データ抽出プロジェクト",
       "projectName": "ステップメール_通販管理システム顧客データ抽出プロジェクト",
-      "projectPath": "C:\\アサヒ緑健RPA\\02ステップメール\\01.通販管理\\.local",
-      "packagesPath": "C:\\Users\\99999\\.nuget\\packages\\",
-      "outputPath": "C:\\アサヒ緑健RPA\\02ステップメール\\01.通販管理\\.local"
+      "projectPath": "C:\\Users\\hirabaru\\Documents\\Desktop\\20240109_(IDR0015)除外(都道府県)機能追加\\20_ソース\\アサヒ緑健RPA\\02ステップメール\\01.通販管理\\.local",
+      "packagesPath": "C:\\Users\\hirabaru\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hirabaru\\Documents\\Desktop\\20240109_(IDR0015)除外(都道府県)機能追加\\20_ソース\\アサヒ緑健RPA\\02ステップメール\\01.通販管理\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
         "dependencies": {
+          "UiPath.CodedWorkflows": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[23.10.2, 23.10.2]"
+          },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -20978,7 +20994,7 @@
             "version": "[23.4.8, 23.4.8]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\hirabaru\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
