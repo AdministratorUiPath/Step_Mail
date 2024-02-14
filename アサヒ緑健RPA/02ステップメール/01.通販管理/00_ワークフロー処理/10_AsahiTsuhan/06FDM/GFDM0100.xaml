@@ -141,7 +141,17 @@
       <Variable x:TypeArguments="x:String" Default="[argDc設定ファイル(&quot;除外(都道府県)&quot;)]" Name="sBefore" />
       <Variable x:TypeArguments="s:String[]" Name="sAfter" />
       <Variable x:TypeArguments="s:String[]" Default="[New[String](){&quot;,&quot;}]" Name="sSplit" />
-      <Variable x:TypeArguments="s:String[]" Default="[{&quot;東北&quot;,&quot;関東&quot;,&quot;北陸&quot;,&quot;中部&quot;,&quot;近畿&quot;,&quot;中国&quot;,&quot;四国&quot;,&quot;九州&quot;}]" Name="sRegion" />
+      <Variable x:TypeArguments="s:String[]" sap2010:Annotation.AnnotationText="地域" Default="[{&quot;東北&quot;,&quot;関東&quot;,&quot;北陸&quot;,&quot;中部&quot;,&quot;近畿&quot;,&quot;中国&quot;,&quot;四国&quot;,&quot;九州&quot;}]" Name="sRegion" />
+      <Variable x:TypeArguments="s:String[]" sap2010:Annotation.AnnotationText="都道府県" Name="sPrefectures">
+        <Variable.Default>
+          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;北海道&quot;,&quot;青森県&quot;,&quot;岩手県&quot;,&quot;宮城県&quot;,&quot;秋田県&quot;,&quot;山形県&quot;,&quot;福島県&quot;,&quot;茨城県&quot;,&quot;栃木県&quot;,&quot;群馬県&quot;,&quot;埼玉県&quot;,&quot;千葉県&quot;,&quot;東京都&quot;,&quot;神奈川県&quot;,&quot;新潟県&quot;,&quot;富山県&quot;,&quot;石川県&quot;,&quot;福井県&quot;,&quot;山梨県&quot;,&quot;長野県&quot;,&quot;岐阜県&quot;,&quot;静岡県&quot;,&quot;愛知県&quot;,&quot;三重県&quot;,&quot;滋賀県&quot;,&quot;京都府&quot;,&quot;大阪府&quot;,&quot;兵庫県&quot;,&quot;奈良県&quot;,&quot;和歌山県&quot;,&quot;鳥取県&quot;,&quot;島根県&quot;,&quot;岡山県&quot;,&quot;広島県&quot;,&quot;山口県&quot;,&quot;徳島県&quot;,&quot;香川県&quot;,&quot;愛媛県&quot;,&quot;高知県&quot;,&quot;福岡県&quot;,&quot;佐賀県&quot;,&quot;長崎県&quot;,&quot;熊本県&quot;,&quot;大分県&quot;,&quot;宮崎県&quot;,&quot;鹿児島県&quot;,&quot;沖縄県&quot;}" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="s:String[]" sap2010:Annotation.AnnotationText="地名" Name="sPrefecturesShortage">
+        <Variable.Default>
+          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot; &quot;,&quot;青森&quot;,&quot;岩手&quot;,&quot;宮城&quot;,&quot;秋田&quot;,&quot;山形&quot;,&quot;福島&quot;,&quot;茨城&quot;,&quot;栃木&quot;,&quot;群馬&quot;,&quot;埼玉&quot;,&quot;千葉&quot;,&quot;東京&quot;,&quot;神奈川&quot;,&quot;新潟&quot;,&quot;富山&quot;,&quot;石川&quot;,&quot;福井&quot;,&quot;山梨&quot;,&quot;長野&quot;,&quot;岐阜&quot;,&quot;静岡&quot;,&quot;愛知&quot;,&quot;三重&quot;,&quot;滋賀&quot;,&quot;京都&quot;,&quot;大阪&quot;,&quot;兵庫&quot;,&quot;奈良&quot;,&quot;和歌山&quot;,&quot;鳥取&quot;,&quot;島根&quot;,&quot;岡山&quot;,&quot;広島&quot;,&quot;山口&quot;,&quot;徳島&quot;,&quot;香川&quot;,&quot;愛媛&quot;,&quot;高知&quot;,&quot;福岡&quot;,&quot;佐賀&quot;,&quot;長崎&quot;,&quot;熊本&quot;,&quot;大分&quot;,&quot;宮崎&quot;,&quot;鹿児島&quot;,&quot;沖縄&quot;}" />
+        </Variable.Default>
+      </Variable>
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -346,7 +356,7 @@
                                   <av:PointCollection x:Key="ConnectorLocation">180,2700.5 180,2730.5 360,2730.5 360,2762</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="商品：チェック" sap:VirtualizedContainerService.HintSize="676,3220" sap2010:WorkflowViewState.IdRef="Sequence_102">
+                              <Sequence DisplayName="商品：チェック" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_102">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -459,7 +469,7 @@
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                         </ui:InvokeWorkflowFile>
-                                                        <Throw Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                                                        <Throw DisplayName="商品名が無効です。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_5" />
                                                       </Sequence>
                                                     </ui:IfElseIfBlock.Then>
                                                   </ui:IfElseIfBlock>
@@ -587,7 +597,7 @@
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                         </ui:InvokeWorkflowFile>
-                                                        <Throw Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                                                        <Throw DisplayName="商品名が無効です。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_6" />
                                                       </Sequence>
                                                     </ui:IfElseIfBlock.Then>
                                                   </ui:IfElseIfBlock>
@@ -643,13 +653,13 @@
                                               <av:PointCollection x:Key="ConnectorLocation">180,3100.5 180,3130.5 360,3130.5 360,3162.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="都道府県" sap:VirtualizedContainerService.HintSize="735,2576" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                                          <Sequence DisplayName="都道府県" sap:VirtualizedContainerService.HintSize="961,5110" sap2010:WorkflowViewState.IdRef="Sequence_107">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign DisplayName="「,」に統一" sap:VirtualizedContainerService.HintSize="673,82" sap2010:WorkflowViewState.IdRef="Assign_77">
+                                            <Assign DisplayName="「,」に統一" sap:VirtualizedContainerService.HintSize="899,82" sap2010:WorkflowViewState.IdRef="Assign_77">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[sBefore]</OutArgument>
                                               </Assign.To>
@@ -657,7 +667,7 @@
                                                 <InArgument x:TypeArguments="x:String">[sBefore.Replace("、",",")]</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <Assign DisplayName="空白を削除" sap:VirtualizedContainerService.HintSize="673,82" sap2010:WorkflowViewState.IdRef="Assign_76">
+                                            <Assign DisplayName="空白を削除" sap:VirtualizedContainerService.HintSize="899,82" sap2010:WorkflowViewState.IdRef="Assign_76">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[sBefore]</OutArgument>
                                               </Assign.To>
@@ -665,7 +675,7 @@
                                                 <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(sBefore, "\s", "")]</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <Assign DisplayName="分割を行い配列に代入" sap:VirtualizedContainerService.HintSize="673,82" sap2010:WorkflowViewState.IdRef="Assign_75">
+                                            <Assign DisplayName="分割を行い配列に代入" sap:VirtualizedContainerService.HintSize="899,82" sap2010:WorkflowViewState.IdRef="Assign_75">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="s:String[]">[sAfter]</OutArgument>
                                               </Assign.To>
@@ -673,41 +683,41 @@
                                                 <InArgument x:TypeArguments="s:String[]">[sBefore.Split(sSplit,0)]</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="繰り返し除外(都道府県)" sap:VirtualizedContainerService.HintSize="673,2099" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[sAfter]">
+                                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="繰り返し除外(都道府県)" sap:VirtualizedContainerService.HintSize="899,4633" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[sAfter]">
                                               <ui:ForEach.Body>
                                                 <ActivityAction x:TypeArguments="x:String">
                                                   <ActivityAction.Argument>
                                                     <DelegateInArgument x:TypeArguments="x:String" Name="sCurrentItem" />
                                                   </ActivityAction.Argument>
-                                                  <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="639,1913" sap2010:WorkflowViewState.IdRef="Sequence_114">
+                                                  <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="865,4447" sap2010:WorkflowViewState.IdRef="Sequence_114">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="アプリケーションを使用: ＦＤＭ発送" sap:VirtualizedContainerService.HintSize="597,1825" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="95aa3e72-d2c3-492f-bab2-af885c4c5060" Version="V2">
+                                                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="アプリケーションを使用: ＦＤＭ発送" sap:VirtualizedContainerService.HintSize="823,4359" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="95aa3e72-d2c3-492f-bab2-af885c4c5060" Version="V2">
                                                       <uix:NApplicationCard.Body>
                                                         <ActivityAction x:TypeArguments="x:Object">
                                                           <ActivityAction.Argument>
                                                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                                           </ActivityAction.Argument>
-                                                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="563,1534" sap2010:WorkflowViewState.IdRef="Sequence_113">
+                                                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="789,4068" sap2010:WorkflowViewState.IdRef="Sequence_113">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="キーボード ショートカット" sap:VirtualizedContainerService.HintSize="501,154" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" ScopeIdentifier="95aa3e72-d2c3-492f-bab2-af885c4c5060" Shortcuts="[d(hk)][d(alt)]g[u(alt)][u(hk)]" Version="V3">
+                                                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="キーボード ショートカット" sap:VirtualizedContainerService.HintSize="727,154" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" ScopeIdentifier="95aa3e72-d2c3-492f-bab2-af885c4c5060" Shortcuts="[d(hk)][d(alt)]g[u(alt)][u(hk)]" Version="V3">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
                                                             </uix:NKeyboardShortcuts>
-                                                            <ui:IfElseIf DisplayName="条件分岐 (else if)" sap:VirtualizedContainerService.HintSize="501,1030" sap2010:WorkflowViewState.IdRef="IfElseIf_23">
+                                                            <ui:IfElseIf DisplayName="条件分岐 (else if)" sap:VirtualizedContainerService.HintSize="727,3564" sap2010:WorkflowViewState.IdRef="IfElseIf_23">
                                                               <ui:IfElseIf.ConditionBlocks>
                                                                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
-                                                                  <ui:IfElseIfBlock BlockType="If" Condition="[sCurrentItem.Length &lt;= 1]">
+                                                                  <ui:IfElseIfBlock BlockType="If" Condition="[sCurrentItem.Length = 0]">
                                                                     <ui:IfElseIfBlock.Then>
                                                                       <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="450,354" sap2010:WorkflowViewState.IdRef="Sequence_121">
                                                                         <sap:WorkflowViewStateService.ViewState>
@@ -715,7 +725,30 @@
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：除外(都道府県)に誤り" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：除外(都道府県)に誤り" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+                                                                          <ui:InvokeWorkflowFile.Arguments>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">設定ファイル(‘除外(都道府県)’)は、「、」や「空白」で終わることはありません。</InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">C:\アサヒ緑健RPA\01管理\30_処理記録\</InArgument>
+                                                                          </ui:InvokeWorkflowFile.Arguments>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </ui:InvokeWorkflowFile>
+                                                                        <Throw DisplayName="設定ファイル(‘除外(都道府県)’)は、「、」や「空白」で終わることはありません。" Exception="[new Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_19" />
+                                                                      </Sequence>
+                                                                    </ui:IfElseIfBlock.Then>
+                                                                  </ui:IfElseIfBlock>
+                                                                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[-1  = Array.IndexOf(sPrefectures,sCurrentItem) And -1  = Array.IndexOf(sPrefecturesShortage,sCurrentItem)]">
+                                                                    <ui:IfElseIfBlock.Then>
+                                                                      <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="450,354" sap2010:WorkflowViewState.IdRef="Sequence_122">
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：除外(都道府県)に誤り" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
                                                                           <ui:InvokeWorkflowFile.Arguments>
                                                                             <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">["「設定ファイル('除外(都道府県)')=" + sCurrentItem + "」に誤りがある可能性があります。"]</InArgument>
                                                                             <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">C:\アサヒ緑健RPA\01管理\30_処理記録\</InArgument>
@@ -726,19 +759,19 @@
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                         </ui:InvokeWorkflowFile>
-                                                                        <Throw DisplayName="Exceptionエラーとする。" Exception="[new Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_15" />
+                                                                        <Throw DisplayName="「設定ファイル('除外(都道府県)')= + sCurrentItem + 」に誤りがある可能性があります。" Exception="[new Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_18" />
                                                                       </Sequence>
                                                                     </ui:IfElseIfBlock.Then>
                                                                   </ui:IfElseIfBlock>
                                                                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[0 &lt;= Array.IndexOf(sRegion,sCurrentItem)]">
                                                                     <ui:IfElseIfBlock.Then>
-                                                                      <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="450,354" sap2010:WorkflowViewState.IdRef="Sequence_122">
+                                                                      <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="450,354" sap2010:WorkflowViewState.IdRef="Sequence_123">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：除外(都道府県)に誤り" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：除外(都道府県)に誤り" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
                                                                           <ui:InvokeWorkflowFile.Arguments>
                                                                             <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">地域は入力不可です。</InArgument>
                                                                             <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">C:\アサヒ緑健RPA\01管理\30_処理記録\</InArgument>
@@ -749,14 +782,117 @@
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                         </ui:InvokeWorkflowFile>
-                                                                        <Throw DisplayName="Exceptionエラーとする。" Exception="[new Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_16" />
+                                                                        <Throw DisplayName="地域は入力不可です。" Exception="[new Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_17" />
+                                                                      </Sequence>
+                                                                    </ui:IfElseIfBlock.Then>
+                                                                  </ui:IfElseIfBlock>
+                                                                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[sAfter.Distinct().Count() &lt;&gt; sAfter.Count()]">
+                                                                    <ui:IfElseIfBlock.Then>
+                                                                      <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="450,354" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：除外(都道府県)に誤り" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+                                                                          <ui:InvokeWorkflowFile.Arguments>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">同じ都道府県を選択することはできません。</InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">C:\アサヒ緑健RPA\01管理\30_処理記録\</InArgument>
+                                                                          </ui:InvokeWorkflowFile.Arguments>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </ui:InvokeWorkflowFile>
+                                                                        <Throw DisplayName="同じ都道府県を選択することはできません。" Exception="[new Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_20" />
+                                                                      </Sequence>
+                                                                    </ui:IfElseIfBlock.Then>
+                                                                  </ui:IfElseIfBlock>
+                                                                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Array.IndexOf(sPrefecturesShortage,sCurrentItem) &gt;= 0]">
+                                                                    <ui:IfElseIfBlock.Then>
+                                                                      <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="563,661" sap2010:WorkflowViewState.IdRef="Sequence_125">
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                        <ui:IfElseIf DisplayName="条件分岐 (else if)" sap:VirtualizedContainerService.HintSize="501,550" sap2010:WorkflowViewState.IdRef="IfElseIf_24">
+                                                                          <ui:IfElseIf.ConditionBlocks>
+                                                                            <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                                                              <ui:IfElseIfBlock BlockType="If" Condition="[Array.IndexOf(sAfter,sPrefectures(Array.IndexOf(sPrefecturesShortage,sCurrentItem))) &gt;= 0]">
+                                                                                <ui:IfElseIfBlock.Then>
+                                                                                  <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="450,354" sap2010:WorkflowViewState.IdRef="Sequence_126">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：除外(都道府県)に誤り" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+                                                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                                                        <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">同じ都道府県を選択することはできません。</InArgument>
+                                                                                        <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">C:\アサヒ緑健RPA\01管理\30_処理記録\</InArgument>
+                                                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                        </scg:Dictionary>
+                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                    </ui:InvokeWorkflowFile>
+                                                                                    <Throw DisplayName="同じ都道府県を選択することはできません。" Exception="[new Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_21" />
+                                                                                  </Sequence>
+                                                                                </ui:IfElseIfBlock.Then>
+                                                                              </ui:IfElseIfBlock>
+                                                                            </sc:BindingList>
+                                                                          </ui:IfElseIf.ConditionBlocks>
+                                                                        </ui:IfElseIf>
+                                                                      </Sequence>
+                                                                    </ui:IfElseIfBlock.Then>
+                                                                  </ui:IfElseIfBlock>
+                                                                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Array.IndexOf(sPrefectures,sCurrentItem) &gt;= 0]">
+                                                                    <ui:IfElseIfBlock.Then>
+                                                                      <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="676,661" sap2010:WorkflowViewState.IdRef="Sequence_128">
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                        <ui:IfElseIf DisplayName="条件分岐 (else if)" sap:VirtualizedContainerService.HintSize="614,550" sap2010:WorkflowViewState.IdRef="IfElseIf_25">
+                                                                          <ui:IfElseIf.ConditionBlocks>
+                                                                            <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                                                              <ui:IfElseIfBlock BlockType="If" Condition="[Array.IndexOf(sAfter,sPrefecturesShortage(Array.IndexOf(sPrefectures,sCurrentItem))) &gt;= 0]">
+                                                                                <ui:IfElseIfBlock.Then>
+                                                                                  <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="450,354" sap2010:WorkflowViewState.IdRef="Sequence_127">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：除外(都道府県)に誤り" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+                                                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                                                        <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">同じ都道府県を選択することはできません。</InArgument>
+                                                                                        <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">C:\アサヒ緑健RPA\01管理\30_処理記録\</InArgument>
+                                                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                        </scg:Dictionary>
+                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                    </ui:InvokeWorkflowFile>
+                                                                                    <Throw DisplayName="同じ都道府県を選択することはできません。" Exception="[new Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_22" />
+                                                                                  </Sequence>
+                                                                                </ui:IfElseIfBlock.Then>
+                                                                              </ui:IfElseIfBlock>
+                                                                            </sc:BindingList>
+                                                                          </ui:IfElseIf.ConditionBlocks>
+                                                                        </ui:IfElseIf>
                                                                       </Sequence>
                                                                     </ui:IfElseIfBlock.Then>
                                                                   </ui:IfElseIfBlock>
                                                                 </sc:BindingList>
                                                               </ui:IfElseIf.ConditionBlocks>
                                                             </ui:IfElseIf>
-                                                            <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" FormattedText="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="テキストをクリック 'SECTION'" sap:VirtualizedContainerService.HintSize="501,155" sap2010:WorkflowViewState.IdRef="ClickText_3" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" Text="[sCurrentItem]">
+                                                            <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" FormattedText="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="テキストをクリック 'SECTION'" sap:VirtualizedContainerService.HintSize="727,155" sap2010:WorkflowViewState.IdRef="ClickText_3" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" Text="[sCurrentItem]">
                                                               <ui:ClickText.CursorPosition>
                                                                 <ui:CursorPosition Position="Center">
                                                                   <ui:CursorPosition.OffsetX>
@@ -2341,7 +2477,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeWorkflowFile>
-                                  <Throw Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                                  <Throw DisplayName="「Or,And,＝」が複数選択されています。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_7" />
                                 </Sequence>
                               </ui:IfElseIfBlock.Then>
                             </ui:IfElseIfBlock>
@@ -2364,7 +2500,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeWorkflowFile>
-                                  <Throw Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_8" />
+                                  <Throw DisplayName="「Or,And,＝」が複数選択されています。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_8" />
                                 </Sequence>
                               </ui:IfElseIfBlock.Then>
                             </ui:IfElseIfBlock>
@@ -2401,7 +2537,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <Throw Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_9" />
+                            <Throw DisplayName="「Or,And,＝」が複数選択されています。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_9" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
