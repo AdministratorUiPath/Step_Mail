@@ -172,6 +172,20 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/出力ファイル作成.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str共通処理名&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argDc設定ファイル",
+        "argDt入力",
+        "argDt出力"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }

@@ -144,7 +144,6 @@
       <Variable x:TypeArguments="s:String[]" sap2010:Annotation.AnnotationText="地域" Default="[{&quot;東北&quot;,&quot;関東&quot;,&quot;北陸&quot;,&quot;中部&quot;,&quot;近畿&quot;,&quot;中国&quot;,&quot;四国&quot;,&quot;九州&quot;}]" Name="sRegion" />
       <Variable x:TypeArguments="s:String[]" sap2010:Annotation.AnnotationText="都道府県" Default="[{&quot;北海道&quot;,&quot;青森県&quot;,&quot;岩手県&quot;,&quot;宮城県&quot;,&quot;秋田県&quot;,&quot;山形県&quot;,&quot;福島県&quot;,&quot;茨城県&quot;,&quot;栃木県&quot;,&quot;群馬県&quot;,&quot;埼玉県&quot;,&quot;千葉県&quot;,&quot;東京都&quot;,&quot;神奈川県&quot;,&quot;新潟県&quot;,&quot;富山県&quot;,&quot;石川県&quot;,&quot;福井県&quot;,&quot;山梨県&quot;,&quot;長野県&quot;,&quot;岐阜県&quot;,&quot;静岡県&quot;,&quot;愛知県&quot;,&quot;三重県&quot;,&quot;滋賀県&quot;,&quot;京都府&quot;,&quot;大阪府&quot;,&quot;兵庫県&quot;,&quot;奈良県&quot;,&quot;和歌山県&quot;,&quot;鳥取県&quot;,&quot;島根県&quot;,&quot;岡山県&quot;,&quot;広島県&quot;,&quot;山口県&quot;,&quot;徳島県&quot;,&quot;香川県&quot;,&quot;愛媛県&quot;,&quot;高知県&quot;,&quot;福岡県&quot;,&quot;佐賀県&quot;,&quot;長崎県&quot;,&quot;熊本県&quot;,&quot;大分県&quot;,&quot;宮崎県&quot;,&quot;鹿児島県&quot;,&quot;沖縄県&quot;}]" Name="sPrefectures" />
       <Variable x:TypeArguments="s:String[]" sap2010:Annotation.AnnotationText="地名" Default="[{&quot; &quot;,&quot;青森&quot;,&quot;岩手&quot;,&quot;宮城&quot;,&quot;秋田&quot;,&quot;山形&quot;,&quot;福島&quot;,&quot;茨城&quot;,&quot;栃木&quot;,&quot;群馬&quot;,&quot;埼玉&quot;,&quot;千葉&quot;,&quot;東京&quot;,&quot;神奈川&quot;,&quot;新潟&quot;,&quot;富山&quot;,&quot;石川&quot;,&quot;福井&quot;,&quot;山梨&quot;,&quot;長野&quot;,&quot;岐阜&quot;,&quot;静岡&quot;,&quot;愛知&quot;,&quot;三重&quot;,&quot;滋賀&quot;,&quot;京都&quot;,&quot;大阪&quot;,&quot;兵庫&quot;,&quot;奈良&quot;,&quot;和歌山&quot;,&quot;鳥取&quot;,&quot;島根&quot;,&quot;岡山&quot;,&quot;広島&quot;,&quot;山口&quot;,&quot;徳島&quot;,&quot;香川&quot;,&quot;愛媛&quot;,&quot;高知&quot;,&quot;福岡&quot;,&quot;佐賀&quot;,&quot;長崎&quot;,&quot;熊本&quot;,&quot;大分&quot;,&quot;宮崎&quot;,&quot;鹿児島&quot;,&quot;沖縄&quot;}]" Name="sPrefecturesShortage" />
-      <Variable x:TypeArguments="x:String" Name="sCurrentItems" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -650,7 +649,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">180,3100.5 180,3130.5 360,3130.5 360,3162.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="都道府県" sap:VirtualizedContainerService.HintSize="848,5453" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                                          <Sequence DisplayName="都道府県" sap:VirtualizedContainerService.HintSize="848,5331" sap2010:WorkflowViewState.IdRef="Sequence_107">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -687,13 +686,13 @@
                                                 </Assign.Value>
                                               </Assign>
                                             </Sequence>
-                                            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="アプリケーションを使用: ＦＤＭ発送" sap:VirtualizedContainerService.HintSize="786,4865" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="95aa3e72-d2c3-492f-bab2-af885c4c5060" Version="V2">
+                                            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="アプリケーションを使用: ＦＤＭ発送" sap:VirtualizedContainerService.HintSize="786,4743" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="95aa3e72-d2c3-492f-bab2-af885c4c5060" Version="V2">
                                               <uix:NApplicationCard.Body>
                                                 <ActivityAction x:TypeArguments="x:Object">
                                                   <ActivityAction.Argument>
                                                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                                   </ActivityAction.Argument>
-                                                  <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="752,4574" sap2010:WorkflowViewState.IdRef="Sequence_158">
+                                                  <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="752,4452" sap2010:WorkflowViewState.IdRef="Sequence_158">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -728,7 +727,7 @@
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                 </ui:InvokeWorkflowFile>
-                                                                <Throw DisplayName="設定ファイル（‘除外（都道府県）’）のチェック処理でエラーが発生。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_42" />
+                                                                <Throw DisplayName="設定ファイル(‘除外(都道府県)’)のチェック処理でエラーが発生。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_42" />
                                                               </Sequence>
                                                             </ui:IfElseIfBlock.Then>
                                                           </ui:IfElseIfBlock>
@@ -758,13 +757,13 @@
                                                         </sc:BindingList>
                                                       </ui:IfElseIf.ConditionBlocks>
                                                     </ui:IfElseIf>
-                                                    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="繰り返し (コレクションの各要素)" sap:VirtualizedContainerService.HintSize="690,3195" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[sAfter]">
+                                                    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="繰り返し (コレクションの各要素)" sap:VirtualizedContainerService.HintSize="690,3073" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[sAfter]">
                                                       <ui:ForEach.Body>
                                                         <ActivityAction x:TypeArguments="x:Object">
                                                           <ActivityAction.Argument>
                                                             <DelegateInArgument x:TypeArguments="x:Object" Name="sCurrentItem" />
                                                           </ActivityAction.Argument>
-                                                          <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="656,3009" sap2010:WorkflowViewState.IdRef="Sequence_157">
+                                                          <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="656,2887" sap2010:WorkflowViewState.IdRef="Sequence_157">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -902,15 +901,7 @@
                                                                 </sc:BindingList>
                                                               </ui:IfElseIf.ConditionBlocks>
                                                             </ui:IfElseIf>
-                                                            <Assign DisplayName="Object型をStringへ変換" sap:VirtualizedContainerService.HintSize="614,82" sap2010:WorkflowViewState.IdRef="Assign_82">
-                                                              <Assign.To>
-                                                                <OutArgument x:TypeArguments="x:String">[sCurrentItems]</OutArgument>
-                                                              </Assign.To>
-                                                              <Assign.Value>
-                                                                <InArgument x:TypeArguments="x:String">[sCurrentItem.ToString]</InArgument>
-                                                              </Assign.Value>
-                                                            </Assign>
-                                                            <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" FormattedText="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="テキストをクリック 'SECTION'" sap:VirtualizedContainerService.HintSize="614,155" sap2010:WorkflowViewState.IdRef="ClickText_5" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" Text="[sCurrentItems]">
+                                                            <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" FormattedText="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="テキストをクリック 'SECTION'" sap:VirtualizedContainerService.HintSize="614,155" sap2010:WorkflowViewState.IdRef="ClickText_5" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" Text="[sCurrentItem.ToString]">
                                                               <ui:ClickText.CursorPosition>
                                                                 <ui:CursorPosition Position="Center">
                                                                   <ui:CursorPosition.OffsetX>
