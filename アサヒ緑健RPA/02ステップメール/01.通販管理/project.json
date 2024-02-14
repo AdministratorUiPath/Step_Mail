@@ -1,6 +1,6 @@
 {
   "name": "ステップメール_通販管理システム顧客データ抽出プロジェクト",
-  "projectId": "f99a67ff-aac3-4ede-ba87-10a8d2beb2be",
+  "projectId": "1e1fe983-6911-47f3-8bb1-347ebbd39369",
   "description": "空のプロジェクト",
   "main": "Main.xaml",
   "dependencies": {
@@ -14,7 +14,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.0.21",
+  "projectVersion": "1.0.25",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -44,6 +44,7 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
+    "modernBehavior": false,
     "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",

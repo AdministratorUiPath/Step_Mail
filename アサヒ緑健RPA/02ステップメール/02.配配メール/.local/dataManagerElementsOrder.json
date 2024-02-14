@@ -12,6 +12,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "gvExcel&Sequence_1",
         "gExcel&Sequence_1",
         "bFlg&Sequence_1",
         "sMessage&Sequence_1",

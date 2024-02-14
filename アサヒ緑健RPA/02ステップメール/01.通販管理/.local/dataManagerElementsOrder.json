@@ -33,9 +33,11 @@
       "Path": "00_ワークフロー処理/10_AsahiTsuhan/06FDM/GFDM0100.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "sRegion&Flowchart_1",
+        "sSplit&Flowchart_1",
+        "sBefore&Flowchart_1",
+        "sAfter&Flowchart_1",
         "sErrorMessage&Flowchart_1",
-        "b&Flowchart_1",
-        "a&Flowchart_1",
         "dicRenkeiData&Flowchart_1",
         "iCnt&Flowchart_1",
         "sHaisoDay&Flowchart_1",

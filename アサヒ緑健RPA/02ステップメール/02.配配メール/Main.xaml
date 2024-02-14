@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.argStr設定シート名="サンプル(キトサン)" this:Main.argStr設定ファイルパス="C:\アサヒ緑健RPA\01管理\10_設定\設定ファイル.xlsx" this:Main.argStr処理記録フォルダ="C:\アサヒ緑健RPA\01管理\30_処理記録" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.argStr設定シート名="サンプル(緑効)" this:Main.argStr設定ファイルパス="C:\アサヒ緑健RPA\01管理\10_設定\設定ファイル.xlsx" this:Main.argStr処理記録フォルダ="C:\アサヒ緑健RPA\01管理\30_処理記録" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="argStr設定シート名" Type="InArgument(x:String)" />
     <x:Property Name="argStr設定ファイルパス" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1231,1680</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1204,1680</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,6 +121,7 @@
       <Variable x:TypeArguments="ui:GenericValue" Name="sExcecutionDate" />
       <Variable x:TypeArguments="x:String" Name="sMessage" />
       <Variable x:TypeArguments="x:String" Name="gExcel" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="gvExcel" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -229,28 +230,28 @@
                     <av:PointCollection x:Key="ConnectorLocation">380,440.5 380,496.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="完了ファイルの確認" sap:VirtualizedContainerService.HintSize="730,2615" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="完了ファイルの確認" sap:VirtualizedContainerService.HintSize="806,3050" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel アプリケーション スコープ" sap:VirtualizedContainerService.HintSize="668,2504" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[dc設定ファイル(&quot;配信スケジュールファイルパス&quot;)]">
+                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel アプリケーション スコープ" sap:VirtualizedContainerService.HintSize="744,2939" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[dc設定ファイル(&quot;配信スケジュールファイルパス&quot;)]">
                     <ui:ExcelApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="634,2394" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                        <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="710,2829" sap2010:WorkflowViewState.IdRef="Sequence_39">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ExcelReadCell Cell="B3" DisplayName="指定日" sap:VirtualizedContainerService.HintSize="572,60" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="[dc設定ファイル(&quot;配信スケジュールシート名&quot;)]">
+                          <ui:ExcelReadCell Cell="B3" DisplayName="指定日" sap:VirtualizedContainerService.HintSize="648,60" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="[dc設定ファイル(&quot;配信スケジュールシート名&quot;)]">
                             <ui:ExcelReadCell.Result>
-                              <OutArgument x:TypeArguments="x:String">[gExcel]</OutArgument>
+                              <OutArgument x:TypeArguments="ui:GenericValue">[gvExcel]</OutArgument>
                             </ui:ExcelReadCell.Result>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -259,7 +260,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:ExcelReadCell>
-                          <If Condition="[gExcel is Nothing]" DisplayName="指定日がNullのとき" sap:VirtualizedContainerService.HintSize="572,383" sap2010:WorkflowViewState.IdRef="If_14">
+                          <If Condition="[gvExcel is Nothing]" DisplayName="指定日がNullのとき" sap:VirtualizedContainerService.HintSize="648,552" sap2010:WorkflowViewState.IdRef="If_14">
                             <If.Then>
                               <Sequence sap:VirtualizedContainerService.HintSize="476,201" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -283,24 +284,24 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                              <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="日付：設定" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                <Assign DisplayName="日付：設定" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_20">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[sKeyDay]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">[DateTime.Parse(gExcel).ToString("yyyyMMdd")]</InArgument>
+                                    <InArgument x:TypeArguments="x:String">[DateTime.Parse(gvExcel).ToString("yyyyMMdd")]</InArgument>
                                   </Assign.Value>
                                 </Assign>
                               </Sequence>
                             </If.Else>
                           </If>
-                          <Assign DisplayName="完了ファイル出力先" sap:VirtualizedContainerService.HintSize="572,82" sap2010:WorkflowViewState.IdRef="Assign_21">
+                          <Assign DisplayName="完了ファイル出力先" sap:VirtualizedContainerService.HintSize="648,81" sap2010:WorkflowViewState.IdRef="Assign_21">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[sFilePath]</OutArgument>
                             </Assign.To>
@@ -308,7 +309,7 @@
                               <InArgument x:TypeArguments="x:String">[dc設定ファイル("完了フォルダ")]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign DisplayName="完了ファイル" sap:VirtualizedContainerService.HintSize="572,82" sap2010:WorkflowViewState.IdRef="Assign_22">
+                          <Assign DisplayName="完了ファイル" sap:VirtualizedContainerService.HintSize="648,81" sap2010:WorkflowViewState.IdRef="Assign_22">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[sFIleName]</OutArgument>
                             </Assign.To>
@@ -316,16 +317,16 @@
                               <InArgument x:TypeArguments="x:String">[sKeyDay+"_" + dc設定ファイル("配信スケジュールシート名") + ".txt"]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:PathExists Resource="{x:Null}" DisplayName="パスの存在を確認" Exists="[bflg]" sap:VirtualizedContainerService.HintSize="572,115" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[sFilePath + &quot;\&quot; + sFIleName]" PathType="File" />
-                          <If Condition="[bFlg]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="572,352" sap2010:WorkflowViewState.IdRef="If_15">
+                          <ui:PathExists Resource="{x:Null}" DisplayName="パスの存在を確認" Exists="[bflg]" sap:VirtualizedContainerService.HintSize="648,115" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[sFilePath + &quot;\&quot; + sFIleName]" PathType="File" />
+                          <If Condition="[bFlg]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="648,351" sap2010:WorkflowViewState.IdRef="If_15">
                             <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                              <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_23">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[sMessage]</OutArgument>
                                   </Assign.To>
@@ -339,13 +340,13 @@
                               <Sequence sap2010:WorkflowViewState.IdRef="Sequence_35" />
                             </If.Else>
                           </If>
-                          <Sequence DisplayName="休日判定" sap:VirtualizedContainerService.HintSize="572,969" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                          <Sequence DisplayName="休日判定" sap:VirtualizedContainerService.HintSize="648,1238" sap2010:WorkflowViewState.IdRef="Sequence_38">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ExcelReadCell sap2010:Annotation.AnnotationText="argDc設定ファイル(&quot;配信スケジュールシート名&quot;)" Cell="B4" DisplayName="行：開始位置" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="[dc設定ファイル(&quot;配信スケジュールシート名&quot;)]">
+                            <ui:ExcelReadCell sap2010:Annotation.AnnotationText="argDc設定ファイル(&quot;配信スケジュールシート名&quot;)" Cell="B4" DisplayName="行：開始位置" sap:VirtualizedContainerService.HintSize="586,91" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="[dc設定ファイル(&quot;配信スケジュールシート名&quot;)]">
                               <ui:ExcelReadCell.Result>
                                 <OutArgument x:TypeArguments="x:String">[gExcel]</OutArgument>
                               </ui:ExcelReadCell.Result>
@@ -355,7 +356,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:ExcelReadCell>
-                            <Assign DisplayName="セル位置：祝日" sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_24">
+                            <Assign DisplayName="セル位置：祝日" sap:VirtualizedContainerService.HintSize="586,81" sap2010:WorkflowViewState.IdRef="Assign_24">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[gExcel]</OutArgument>
                               </Assign.To>
@@ -363,7 +364,7 @@
                                 <InArgument x:TypeArguments="x:String">["F" &amp; (Integer.Parse(gExcel) + 1).ToString]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:ExcelReadCell sap2010:Annotation.AnnotationText="argDc設定ファイル(&quot;配信スケジュールシート名&quot;)" Cell="[gExcel]" DisplayName="祝日列取得" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="ExcelReadCell_7" SheetName="[dc設定ファイル(&quot;配信スケジュールシート名&quot;)]">
+                            <ui:ExcelReadCell sap2010:Annotation.AnnotationText="argDc設定ファイル(&quot;配信スケジュールシート名&quot;)" Cell="[gExcel]" DisplayName="祝日列取得" sap:VirtualizedContainerService.HintSize="586,91" sap2010:WorkflowViewState.IdRef="ExcelReadCell_7" SheetName="[dc設定ファイル(&quot;配信スケジュールシート名&quot;)]">
                               <ui:ExcelReadCell.Result>
                                 <OutArgument x:TypeArguments="x:String">[gExcel]</OutArgument>
                               </ui:ExcelReadCell.Result>
@@ -373,30 +374,44 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:ExcelReadCell>
-                            <If Condition="[gExcel.Length &gt; 0]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="510,474" sap2010:WorkflowViewState.IdRef="If_16">
+                            <If Condition="[gExcel isnot Nothing]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="586,744" sap2010:WorkflowViewState.IdRef="If_16">
                               <If.Then>
-                                <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                <Sequence sap:VirtualizedContainerService.HintSize="552,562" sap2010:WorkflowViewState.IdRef="Sequence_36">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_25">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Boolean">[bFlg]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
-                                  <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_26">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:String">[sMessage]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:String">休日のためスキップ</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <If Condition="[gExcel .Length&gt;0]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="510,474" sap2010:WorkflowViewState.IdRef="If_17">
+                                    <If.Then>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Boolean">[bFlg]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[sMessage]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">休日のためスキップ</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_41" />
+                                    </If.Else>
+                                  </If>
                                 </Sequence>
                               </If.Then>
                               <If.Else>
