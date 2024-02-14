@@ -86,67 +86,63 @@
   <Flowchart DisplayName="ファイル開閉チェック" sap:VirtualizedContainerService.HintSize="641,637" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bFlag" />
-      <Variable x:TypeArguments="x:String" Name="variable1" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,144</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,134</av:PointCollection>
         <x:Double x:Key="Width">607</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID0">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">200,144</av:Point>
+          <av:Point x:Key="ShapeLocation">30,334</av:Point>
           <av:Size x:Key="ShapeSize">200,52</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,196 300,236.5</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">30,360 0,360 0,160 200,160</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeCode ContinueOnError="{x:Null}" Code="bFlag = False&#xA;If Not(System.IO.File.Exists(argStrファイルパス)) Then&#xA;    Throw New Exception(&quot;ファイルがありません。&quot; &amp; argStrファイルパス)&#xA;End If&#xA;'// ファイルを排他モードで開いて、エラーが出れば使用中とみなす（Using指定すると自動開放される）&#xA;Try&#xA;&#x9;Dim fs2 As FileStream&#xA;    fs2 = File.Open(argStrファイルパス,FileMode.Open,FileAccess.Read)&#xA;&#x9;fs2.Close()&#xA;Catch ex As Exception&#xA;    bFlag = True&#xA;End Try" DisplayName="コードを呼び出し" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
-        <ui:InvokeCode.Arguments>
-          <InOutArgument x:TypeArguments="x:Boolean" x:Key="bFlag">[bFlag]</InOutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="argStrファイルパス">[argStrファイルパス]</InArgument>
-        </ui:InvokeCode.Arguments>
-      </ui:InvokeCode>
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="メッセージ ボックス(異常)" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;ファイルが開いている可能性があります。&quot;  _&#xA;&amp; Environment.NewLine _&#xA;&amp; argStrファイルパス _&#xA;&amp; Environment.NewLine _&#xA;&amp; &quot;ファイルを閉じてから、OKボタンを押下してください。&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MessageBox>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID2" Condition="[bFlag]" DisplayName="ファイルが開いているか。" sap:VirtualizedContainerService.HintSize="118,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+        <FlowStep x:Name="__ReferenceID2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <av:Point x:Key="ShapeLocation">241,236.5</av:Point>
-              <av:Size x:Key="ShapeSize">118,87</av:Size>
-              <av:PointCollection x:Key="TrueConnector">241,280 130,280 130,334</av:PointCollection>
+              <av:Point x:Key="ShapeLocation">200,134</av:Point>
+              <av:Size x:Key="ShapeSize">200,52</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">300,186 300,236.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <FlowDecision.True>
-            <FlowStep x:Name="__ReferenceID1">
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="bFlag = False&#xA;If Not(System.IO.File.Exists(argStrファイルパス)) Then&#xA;    Throw New Exception(&quot;ファイルがありません。&quot; &amp; argStrファイルパス)&#xA;End If&#xA;'// ファイルを排他モードで開いて、エラーが出れば使用中とみなす（Using指定すると自動開放される）&#xA;Try&#xA;&#x9;Dim fs2 As FileStream&#xA;    fs2 = File.Open(argStrファイルパス,FileMode.Open,FileAccess.Read)&#xA;&#x9;fs2.Close()&#xA;Catch ex As Exception&#xA;    bFlag = True&#xA;End Try" DisplayName="コードを呼び出し" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+            <ui:InvokeCode.Arguments>
+              <InOutArgument x:TypeArguments="x:Boolean" x:Key="bFlag">[bFlag]</InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="argStrファイルパス">[argStrファイルパス]</InArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <FlowStep.Next>
+            <FlowDecision x:Name="__ReferenceID1" Condition="[bFlag]" DisplayName="ファイルが開いているか。" sap:VirtualizedContainerService.HintSize="118,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID0}">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">30,334</av:Point>
-                  <av:Size x:Key="ShapeSize">200,52</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">30,360 0,360 0,170 200,170</av:PointCollection>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <av:Point x:Key="ShapeLocation">241,236.5</av:Point>
+                  <av:Size x:Key="ShapeSize">118,87</av:Size>
+                  <av:PointCollection x:Key="TrueConnector">241,280 130,280 130,334</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="メッセージ ボックス(異常)" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;ファイルが開いている可能性があります。&quot;  _&#xA;&amp; Environment.NewLine _&#xA;&amp; argStrファイルパス _&#xA;&amp; Environment.NewLine _&#xA;&amp; &quot;ファイルを閉じてから、OKボタンを押下してください。&quot;]">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:MessageBox>
-              <FlowStep.Next>
-                <x:Reference>__ReferenceID0</x:Reference>
-              </FlowStep.Next>
-            </FlowStep>
-          </FlowDecision.True>
-        </FlowDecision>
+            </FlowDecision>
+          </FlowStep.Next>
+        </FlowStep>
       </FlowStep.Next>
     </FlowStep>
     <x:Reference>__ReferenceID1</x:Reference>

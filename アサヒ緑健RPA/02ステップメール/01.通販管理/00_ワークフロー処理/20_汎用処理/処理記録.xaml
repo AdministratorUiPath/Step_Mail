@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1187,878</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1136,826.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>処理記録出力_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -32,12 +32,10 @@
       <x:String>System.Xml.Linq</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="72">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -60,54 +58,39 @@
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <sap:WorkflowViewStateService.ViewState>
-    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
-    </scg:Dictionary>
-  </sap:WorkflowViewStateService.ViewState>
-  <Flowchart DisplayName="処理記録" sap:VirtualizedContainerService.HintSize="694,813" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="処理記録" sap:VirtualizedContainerService.HintSize="633.6,689.6" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Default="[&quot;処理記録&quot; &amp; Today.ToString(&quot;yyyyMMdd&quot;) &amp; &quot;.log&quot;]" Name="str処理記録ファイル名" />
       <Variable x:TypeArguments="x:Boolean" Name="blパス有無" />
+      <Variable x:TypeArguments="x:String" Default="[argStr処理記録フォルダ]" Name="str処理記録フォルダ" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
-        <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,104</av:PointCollection>
-        <x:Double x:Key="Height">775.6</x:Double>
-        <x:Double x:Key="Width">660</x:Double>
+        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,127.7</av:PointCollection>
+        <x:Double x:Key="Height">652.7520000000002</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID6</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">440,434</av:Point>
-          <av:Size x:Key="ShapeSize">200,52</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">540,486 540,530 400,530</av:PointCollection>
+          <av:Point x:Key="ShapeLocation">390,358.8</av:Point>
+          <av:Size x:Key="ShapeSize">200,22.4</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">490,381.2 490,400 230,400</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CreateFile ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="当日日付の処理記録ファイルを作成" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="CreateFile_1" Name="[str処理記録ファイル名]" Path="[argStr処理記録フォルダ]">
+      <ui:CreateFile ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="当日日付の処理記録ファイルを作成" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="CreateFile_1" Name="[str処理記録ファイル名]" Path="[str処理記録フォルダ]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -118,12 +101,12 @@
         <FlowStep x:Name="__ReferenceID0">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">200,504</av:Point>
-              <av:Size x:Key="ShapeSize">200,52</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">300,556 300,599</av:PointCollection>
+              <av:Point x:Key="ShapeLocation">30,373.6</av:Point>
+              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">130,426.4 130,456.4 320,456.4 320,480</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="メッセージを処理記録" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[argStr記録メッセージ]">
+          <ui:LogMessage DisplayName="メッセージを処理記録" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[argStr記録メッセージ]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -134,12 +117,12 @@
             <FlowStep x:Name="__ReferenceID4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">83,599</av:Point>
-                  <av:Size x:Key="ShapeSize">434,82</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,681 300,723.6</av:PointCollection>
+                  <av:Point x:Key="ShapeLocation">188.8,480</av:Point>
+                  <av:Size x:Key="ShapeSize">262.4,60</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">320,540 320,583.6</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="処理記録メッセージ設定" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign DisplayName="処理記録メッセージ設定" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[argStr記録メッセージ]</OutArgument>
                 </Assign.To>
@@ -156,11 +139,11 @@
                 <FlowStep x:Name="__ReferenceID3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">200,723.6</av:Point>
-                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                      <av:Point x:Key="ShapeLocation">220,583.6</av:Point>
+                      <av:Size x:Key="ShapeSize">200,52.8</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:AppendLine File="{x:Null}" DisplayName="処理記録にメッセージ書き込み" FileName="[argStr処理記録フォルダ &amp;str処理記録ファイル名]" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[argStr記録メッセージ]" UseDefaultEncoding="False">
+                  <ui:AppendLine File="{x:Null}" DisplayName="処理記録にメッセージ書き込み" FileName="[str処理記録フォルダ &amp;str処理記録ファイル名]" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[argStr記録メッセージ]" UseDefaultEncoding="False">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,12 +160,12 @@
     <FlowStep x:Name="__ReferenceID5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">200,187.7</av:Point>
-          <av:Size x:Key="ShapeSize">200,109</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,296.7 300,336.5</av:PointCollection>
+          <av:Point x:Key="ShapeLocation">200,127.7</av:Point>
+          <av:Size x:Key="ShapeSize">200,112.8</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,240.5 300,270.5 314.8,270.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:PathExists Resource="{x:Null}" sap2010:Annotation.AnnotationText="当日日付の処理記録ファイルの有無を判定する。&#xA;・処理記録yyyyMMdd.log" DisplayName="処理記録ファイルの有無を確認" Exists="[blパス有無]" sap:VirtualizedContainerService.HintSize="200,109" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[argStr処理記録フォルダ &amp; str処理記録ファイル名]" PathType="File">
+      <ui:PathExists Resource="{x:Null}" sap2010:Annotation.AnnotationText="当日日付の処理記録ファイルの有無を判定する。&#xA;・処理記録yyyyMMdd.log" DisplayName="処理記録ファイルの有無を確認" Exists="[blパス有無]" sap:VirtualizedContainerService.HintSize="200,112.8" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[str処理記録フォルダ &amp; str処理記録ファイル名]" PathType="File">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -191,14 +174,14 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:PathExists>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID2" Condition="[blパス有無]" DisplayName="処理記録ファイルが存在するか" sap:VirtualizedContainerService.HintSize="151,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID0}" False="{x:Reference __ReferenceID1}">
+        <FlowDecision x:Name="__ReferenceID2" Condition="[blパス有無]" DisplayName="処理記録ファイルが存在するか" sap:VirtualizedContainerService.HintSize="149.6,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID0}" False="{x:Reference __ReferenceID1}">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <av:Point x:Key="ShapeLocation">224.5,336.5</av:Point>
-              <av:Size x:Key="ShapeSize">151,87</av:Size>
-              <av:PointCollection x:Key="FalseConnector">375.5,380 540,380 540,434</av:PointCollection>
-              <av:PointCollection x:Key="TrueConnector">224.5,380 59.5,380 59.5,530 200,530</av:PointCollection>
+              <av:Point x:Key="ShapeLocation">240,270.5</av:Point>
+              <av:Size x:Key="ShapeSize">149.6,87.2</av:Size>
+              <av:PointCollection x:Key="FalseConnector">389.6,314.1 490,314.1 490,358.8</av:PointCollection>
+              <av:PointCollection x:Key="TrueConnector">240,314.1 0,314.1 0,400 30,400</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </FlowDecision>
@@ -208,43 +191,5 @@
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
-    <FlowStep x:Name="__ReferenceID6">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">200,104</av:Point>
-          <av:Size x:Key="ShapeSize">200,52</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,156 300,187.7</av:PointCollection>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[argStr処理記録フォルダ.EndsWith(&quot;\&quot;)]" DisplayName="処理記録フォルダパス\_条件分岐" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="If_1">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <If.Then>
-          <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_1">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-        </If.Then>
-        <If.Else>
-          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[argStr処理記録フォルダ]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[argStr処理記録フォルダ+"\"]</InArgument>
-            </Assign.Value>
-          </Assign>
-        </If.Else>
-      </If>
-      <FlowStep.Next>
-        <x:Reference>__ReferenceID5</x:Reference>
-      </FlowStep.Next>
-    </FlowStep>
   </Flowchart>
 </Activity>

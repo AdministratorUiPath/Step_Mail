@@ -4,6 +4,7 @@
   "description": "空のプロジェクト",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.CodedWorkflows": "[23.10.2]",
     "UiPath.Excel.Activities": "[2.20.2]",
     "UiPath.Mail.Activities": "[1.20.3]",
     "UiPath.System.Activities": "[23.4.5]",
@@ -14,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.0.25",
+  "projectVersion": "1.0.31",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -52,6 +53,12 @@
     {
       "filePath": "Main.xaml",
       "uniqueId": "30d42602-42df-48fe-b643-d8ba2d31d490",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "ワークフロー.cs",
+      "uniqueId": "977b534d-0226-41b4-afa4-56828cdf8388",
       "input": [],
       "output": []
     }

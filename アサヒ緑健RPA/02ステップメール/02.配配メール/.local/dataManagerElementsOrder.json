@@ -110,8 +110,7 @@
       "Path": "00_ワークフロー処理/20_汎用処理/ファイルチェック.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "bFlag&Flowchart_1",
-        "variable1&Flowchart_1"
+        "bFlag&Flowchart_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "argStrファイルパス"
@@ -137,6 +136,37 @@
         "argFlg",
         "argSKeyDay",
         "argIMaxDay"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/異常終了.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str共通処理名&Flowchart_1",
+        "imgエラーキャプチャ&Flowchart_1",
+        "strエラーメッセージ&Flowchart_1",
+        "strエラーファイル&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argDc設定ファイル",
+        "argExp異常"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/処理記録.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str処理記録ファイル名&Flowchart_1",
+        "blパス有無&Flowchart_1",
+        "str処理記録フォルダ&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argStr記録メッセージ",
+        "argStr処理記録フォルダ"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

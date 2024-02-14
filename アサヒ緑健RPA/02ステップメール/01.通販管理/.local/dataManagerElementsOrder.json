@@ -101,6 +101,7 @@
       "Path": "00_ワークフロー処理/20_汎用処理/処理記録.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str処理記録フォルダ&Flowchart_1",
         "str処理記録ファイル名&Flowchart_1",
         "blパス有無&Flowchart_1"
       ],
@@ -156,6 +157,20 @@
       ],
       "ArgumentsSectionElementsOrder": [
         "argStrファイルパス"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/正常終了.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "blパス有無&Flowchart_1",
+        "sTextValue&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argDc設定ファイル",
+        "argSFunction"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

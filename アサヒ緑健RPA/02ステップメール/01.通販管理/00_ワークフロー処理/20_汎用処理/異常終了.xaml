@@ -6,10 +6,12 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>604,882</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>801,882</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>異常終了_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
       <x:String>Microsoft.VisualBasic.Activities</x:String>
       <x:String>System</x:String>
@@ -27,6 +29,7 @@
       <x:String>System.IO</x:String>
       <x:String>System.Linq</x:String>
       <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Xml</x:String>
       <x:String>System.Xml.Linq</x:String>
@@ -35,18 +38,21 @@
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
-      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="72">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>PresentationCore</AssemblyReference>
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
@@ -56,6 +62,11 @@
       <AssemblyReference>System.Net.Mail</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
@@ -65,11 +76,18 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
   <Flowchart DisplayName="異常終了" sap:VirtualizedContainerService.HintSize="614,817" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Default="異常終了" Name="str共通処理名" />
@@ -142,7 +160,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="エラーキャプチャ" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[imgエラーキャプチャ]">
             <ui:TakeScreenshot.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="3ec1c62f-99e9-4a73-980a-641f0f59cb5b">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2b16a199-5420-452a-8b46-e39a3b3310a3">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -198,7 +216,7 @@
                           <av:PointCollection x:Key="ConnectorLocation">201,661 201,711</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;各位&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;本メールは、RPAから自動出力されています。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;対象システム：RPA通販管理システム顧客データ抽出&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; argDc設定ファイル(&quot;処理名&quot;) &amp; &quot;の処理が異常終了しました。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;メッセージ：&quot; &amp; argExp異常.Message _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp;&quot;対象処理：&quot; &amp; argExp異常.Source &amp; _&#xA;Environment.NewLine &amp; Environment.NewLine &amp; _&#xA;&quot;詳細：&quot; &amp; argExp異常.ToString &amp; _&#xA;Environment.NewLine &amp; Environment.NewLine &amp; _&#xA;&quot;エラー内容にて原因が不明である場合、システム管理者へご連絡下さい。&quot;]" DisplayName="メール送信" Email="asahiryokuken009@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="cvjfupxopnqtjfng" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[argDc設定ファイル(&quot;エラー発生時メール件名&quot;)　&amp; &quot;（&quot; &amp;  Now.ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;)　&amp; &quot;)&quot;]" To="[argDc設定ファイル(&quot;エラー発生時メール通知&quot;)]">
+                      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;各位&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;本メールは、RPAから自動出力されています。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;対象システム：RPA配配メール自動送信&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; argDc設定ファイル(&quot;処理名&quot;) &amp; &quot;の処理が異常終了しました。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;メッセージ：&quot; &amp; argExp異常.Message _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp;&quot;対象処理：&quot; &amp; argExp異常.Source &amp; _&#xA;Environment.NewLine &amp; Environment.NewLine &amp; _&#xA;&quot;詳細：&quot; &amp; argExp異常.ToString &amp; _&#xA;Environment.NewLine &amp; Environment.NewLine &amp; _&#xA;&quot;エラー内容にて原因が不明である場合、システム管理者へご連絡下さい。&quot;]" DisplayName="メール送信" Email="asahiryokuken009@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="cvjfupxopnqtjfng" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[argDc設定ファイル(&quot;エラー発生時メール件名&quot;)　&amp; &quot;（&quot; &amp;  Now.ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;)　&amp; &quot;)&quot;]" To="[argDc設定ファイル(&quot;エラー発生時メール通知&quot;)]">
                         <ui:SendMail.Files>
                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                         </ui:SendMail.Files>
