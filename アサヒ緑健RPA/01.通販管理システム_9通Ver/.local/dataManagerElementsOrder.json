@@ -1,0 +1,75 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dc設定ファイル&Sequence_1",
+        "sTextValue&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argStr設定ファイルパス",
+        "argStr処理記録フォルダ",
+        "argStr指定実行日"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/設定ファイル読込.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt設定ファイル&Flowchart_1",
+        "bl設定ファイル&Flowchart_1",
+        "str共通処理名&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "arg設定ファイルパス",
+        "argDc設定ファイル",
+        "argStr処理記録フォルダ"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/10_業務処理/通販管理システム_顧客データ抽出.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dicHaisoSchedule&Flowchart_3",
+        "iResult&Flowchart_3",
+        "sKeyDay&Flowchart_3",
+        "dicHaisoRow&Flowchart_3",
+        "iLoopCnt&Flowchart_3",
+        "iStepCnt&Flowchart_3",
+        "sHaisoDay&Flowchart_3",
+        "dicRenkeiData&Flowchart_3",
+        "dicHaisoScheduleHejitsuKyujitsu&Flowchart_3",
+        "b連携ファイル&Sequence_84",
+        "sFIleName&Sequence_84",
+        "sFilePath&Sequence_84",
+        "sHaisoDayYYMMDD&Sequence_29",
+        "sTokoDayYYMMDD&Sequence_29",
+        "iDMVal&Sequence_29",
+        "sSaveFileName&Sequence_29",
+        "sOutPutPath&Sequence_29",
+        "b連携ファイル&Sequence_57",
+        "sFIleName&Sequence_57",
+        "sFilePath&Sequence_57"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argDc設定ファイル",
+        "argS指定日付"
+      ],
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    }
+  ]
+}
