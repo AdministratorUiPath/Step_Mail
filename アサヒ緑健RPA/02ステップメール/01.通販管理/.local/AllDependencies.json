@@ -20939,15 +20939,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\99999\\.nuget\\packages\\": {}
+    "C:\\Users\\nakano\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "ステップメール_通販管理システム顧客データ抽出プロジェクト",
       "projectName": "ステップメール_通販管理システム顧客データ抽出プロジェクト",
-      "projectPath": "C:\\アサヒ緑健RPA\\02ステップメール\\01.通販管理\\.local",
-      "packagesPath": "C:\\Users\\99999\\.nuget\\packages\\",
-      "outputPath": "C:\\アサヒ緑健RPA\\02ステップメール\\01.通販管理\\.local"
+      "projectPath": "D:\\work\\通販管理システム_アサヒ緑健\\平原くん\\20231215_(ID91562,R0005)ステップメール(キトサン)対応\\20_ソース\\アサヒ緑健RPA\\02ステップメール\\01.通販管理\\.local",
+      "packagesPath": "C:\\Users\\nakano\\.nuget\\packages\\",
+      "outputPath": "D:\\work\\通販管理システム_アサヒ緑健\\平原くん\\20231215_(ID91562,R0005)ステップメール(キトサン)対応\\20_ソース\\アサヒ緑健RPA\\02ステップメール\\01.通販管理\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
@@ -20978,7 +20978,7 @@
             "version": "[23.4.8, 23.4.8]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\nakano\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
