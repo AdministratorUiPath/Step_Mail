@@ -782,7 +782,7 @@
                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：除外(都道府県)に誤り" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
                                                                           <ui:InvokeWorkflowFile.Arguments>
-                                                                            <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">設定ファイル(‘除外(都道府県)’)には地域の入力は許可されていません。</InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">設定ファイル('除外(都道府県)')には地域の入力は許可されていません。</InArgument>
                                                                             <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">C:\アサヒ緑健RPA\01管理\30_処理記録\</InArgument>
                                                                           </ui:InvokeWorkflowFile.Arguments>
                                                                           <sap:WorkflowViewStateService.ViewState>
@@ -803,18 +803,13 @@
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：除外(都道府県)に誤り" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録.xaml - ワークフロー ファイルを呼び出し" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_47" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
                                                                           <ui:InvokeWorkflowFile.Arguments>
-                                                                            <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">設定ファイル(‘除外(都道府県)’)には、都道府県以外の入力は許可されていません。</InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">設定ファイル('除外(都道府県)')には、都道府県以外の入力は許可されていません。</InArgument>
                                                                             <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">C:\アサヒ緑健RPA\01管理\30_処理記録\</InArgument>
                                                                           </ui:InvokeWorkflowFile.Arguments>
-                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                            </scg:Dictionary>
-                                                                          </sap:WorkflowViewStateService.ViewState>
                                                                         </ui:InvokeWorkflowFile>
-                                                                        <Throw DisplayName="設定ファイル(‘除外(都道府県)’)には、都道府県以外の入力は許可されていません。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_38" />
+                                                                        <Throw DisplayName="設定ファイル('除外(都道府県)')には、都道府県以外の入力は許可されていません。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_44" />
                                                                       </Sequence>
                                                                     </ui:IfElseIfBlock.Then>
                                                                   </ui:IfElseIfBlock>
