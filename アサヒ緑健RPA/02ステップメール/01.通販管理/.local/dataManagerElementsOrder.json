@@ -12,6 +12,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "sFunction&Sequence_1",
         "dc設定ファイル&Sequence_1",
         "sFilePath&Sequence_1",
         "sFIleName&Sequence_1",
@@ -146,6 +147,7 @@
         "strエラーファイル&Flowchart_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "argSFunction",
         "argDc設定ファイル",
         "argExp異常"
       ],
