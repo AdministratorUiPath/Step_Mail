@@ -33,6 +33,7 @@
       "Path": "00_ワークフロー処理/10_AsahiTsuhan/06FDM/GFDM0100.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "sCurrentItems&Flowchart_1",
         "sPrefecturesShortage&Flowchart_1",
         "sPrefectures&Flowchart_1",
         "sErrorMessage&Flowchart_1",
