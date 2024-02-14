@@ -120,6 +120,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -206,7 +207,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">201,317 201,376</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="ログイン処理" sap:VirtualizedContainerService.HintSize="546,1307" sap2010:WorkflowViewState.IdRef="Sequence_52">
+              <Sequence DisplayName="ログイン処理" sap:VirtualizedContainerService.HintSize="546,1197" sap2010:WorkflowViewState.IdRef="Sequence_52">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -377,21 +378,13 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:OpenBrowser>
-                <Delay DisplayName="待機（3秒）" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="484,90" sap2010:WorkflowViewState.IdRef="Delay_84">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Delay>
-                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ログイン処理" sap:VirtualizedContainerService.HintSize="484,882" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="330a6fd020aef07c328e6a46708b462f" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;">
+                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ログイン処理" sap:VirtualizedContainerService.HintSize="484,902" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="330a6fd020aef07c328e6a46708b462f" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;">
                   <ui:BrowserScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,735" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,755" sap2010:WorkflowViewState.IdRef="Sequence_36">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -418,7 +411,7 @@
                             </ui:Target>
                           </ui:TypeInto.Target>
                         </ui:TypeInto>
-                        <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="文字を入力 'INPUT  password'" EmptyField="False" sap:VirtualizedContainerService.HintSize="388,135" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="True" Text="[argDc設定ファイル(&quot;配配メールパスワード&quot;)]">
+                        <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="文字を入力 'INPUT  password'" EmptyField="False" sap:VirtualizedContainerService.HintSize="388,155" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="True" Text="[argDc設定ファイル(&quot;配配メールパスワード&quot;)]">
                           <ui:TypeInto.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="66ffe93a-aea8-496b-ab59-07b875143ba1" InformativeScreenshot="6c4e695cfb500abb819305ecb00c0413" Selector="&lt;webctrl id='password' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                               <ui:Target.TimeoutMS>
@@ -570,30 +563,30 @@
                               <av:PointCollection x:Key="ConnectorLocation">250,446 250,479.50000000000006</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="配配メール送信繰り返し" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[Texth]">
+                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="配配メール送信繰り返し" sap:VirtualizedContainerService.HintSize="953,10561" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[Texth]">
                             <ui:ForEach.Body>
                               <ActivityAction x:TypeArguments="x:String">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="919,10361" sap2010:WorkflowViewState.IdRef="Sequence_169">
+                                <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="919,10375" sap2010:WorkflowViewState.IdRef="Sequence_169">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:IfElseIf DisplayName="パス情報か日付情報か" sap:VirtualizedContainerService.HintSize="877,10273" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+                                  <ui:IfElseIf DisplayName="パス情報か日付情報か" sap:VirtualizedContainerService.HintSize="877,10287" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
                                     <ui:IfElseIf.ConditionBlocks>
                                       <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                         <ui:IfElseIfBlock BlockType="If" Condition="[mid(item,1,1)&lt;&gt;&quot;■&quot;]">
                                           <ui:IfElseIfBlock.Then>
-                                            <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="716,9421" sap2010:WorkflowViewState.IdRef="Sequence_133">
+                                            <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="716,9434" sap2010:WorkflowViewState.IdRef="Sequence_133">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Assign DisplayName="件数初期化" sap:VirtualizedContainerService.HintSize="654,81" sap2010:WorkflowViewState.IdRef="Assign_106">
+                                              <Assign DisplayName="件数初期化" sap:VirtualizedContainerService.HintSize="654,82" sap2010:WorkflowViewState.IdRef="Assign_106">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:Int32">[カウント]</OutArgument>
                                                 </Assign.To>
@@ -607,7 +600,7 @@
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </Assign>
-                                              <Assign sap2010:Annotation.AnnotationText="9311 = ①&#xA;9312 = ②&#xA;9313 = ③&#xA;　・&#xA;　・&#xA;　・" DisplayName="文字コード代入" sap:VirtualizedContainerService.HintSize="654,183" sap2010:WorkflowViewState.IdRef="Assign_100">
+                                              <Assign sap2010:Annotation.AnnotationText="9311 = ①&#xA;9312 = ②&#xA;9313 = ③&#xA;　・&#xA;　・&#xA;　・" DisplayName="文字コード代入" sap:VirtualizedContainerService.HintSize="654,184" sap2010:WorkflowViewState.IdRef="Assign_100">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[cChange]</OutArgument>
                                                 </Assign.To>
@@ -620,7 +613,7 @@
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </Assign>
-                                              <Assign DisplayName="&quot;α&quot;をループ回数に置き換える。" sap:VirtualizedContainerService.HintSize="654,81" sap2010:WorkflowViewState.IdRef="Assign_99">
+                                              <Assign DisplayName="&quot;α&quot;をループ回数に置き換える。" sap:VirtualizedContainerService.HintSize="654,82" sap2010:WorkflowViewState.IdRef="Assign_99">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[oFileName]</OutArgument>
                                                 </Assign.To>
@@ -628,7 +621,7 @@
                                                   <InArgument x:TypeArguments="x:String">[oFileName.Replace("α",カウント.ToString)]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <Assign DisplayName="出力ファイル配置パス" sap:VirtualizedContainerService.HintSize="654,81" sap2010:WorkflowViewState.IdRef="Assign_101">
+                                              <Assign DisplayName="出力ファイル配置パス" sap:VirtualizedContainerService.HintSize="654,82" sap2010:WorkflowViewState.IdRef="Assign_101">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[oFileName]</OutArgument>
                                                 </Assign.To>
@@ -636,7 +629,7 @@
                                                   <InArgument x:TypeArguments="x:String">[argDc設定ファイル("出力ファイル配置パス（ステップメールα通目）").Replace("α",cChange) +"\"+oFileName]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <Assign DisplayName="ファイルパス取得" sap:VirtualizedContainerService.HintSize="654,81" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                              <Assign DisplayName="ファイルパス取得" sap:VirtualizedContainerService.HintSize="654,82" sap2010:WorkflowViewState.IdRef="Assign_25">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[ステップメールファイルパス]</OutArgument>
                                                 </Assign.To>
@@ -644,7 +637,7 @@
                                                   <InArgument x:TypeArguments="x:String">[item]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <Assign DisplayName="配送日取得" sap:VirtualizedContainerService.HintSize="654,81" sap2010:WorkflowViewState.IdRef="Assign_94">
+                                              <Assign DisplayName="配送日取得" sap:VirtualizedContainerService.HintSize="654,82" sap2010:WorkflowViewState.IdRef="Assign_94">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[sHaisoDay]</OutArgument>
                                                 </Assign.To>
@@ -652,7 +645,7 @@
                                                   <InArgument x:TypeArguments="x:String">[Right(item,12).Replace(".csv","")]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <Assign DisplayName="グループ名用の配送日設定(yymmdd)" sap:VirtualizedContainerService.HintSize="654,81" sap2010:WorkflowViewState.IdRef="Assign_91">
+                                              <Assign DisplayName="グループ名用の配送日設定(yymmdd)" sap:VirtualizedContainerService.HintSize="654,82" sap2010:WorkflowViewState.IdRef="Assign_91">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[groupday]</OutArgument>
                                                 </Assign.To>
@@ -660,14 +653,14 @@
                                                   <InArgument x:TypeArguments="x:String">[Right(sHaisoDay,6)]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <Sequence DisplayName="メール配信年日付時間代入処理" sap:VirtualizedContainerService.HintSize="654,676" sap2010:WorkflowViewState.IdRef="Sequence_330">
+                                              <Sequence DisplayName="メール配信年日付時間代入処理" sap:VirtualizedContainerService.HintSize="654,681" sap2010:WorkflowViewState.IdRef="Sequence_330">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Assign DisplayName="日代入" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_57">
+                                                <Assign DisplayName="日代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_57">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[メール配信日]</OutArgument>
                                                   </Assign.To>
@@ -675,7 +668,7 @@
                                                     <InArgument x:TypeArguments="x:String">[mid(sKeyDay,7,2)]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <Assign DisplayName="月代入" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_58">
+                                                <Assign DisplayName="月代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_58">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[メール配信月]</OutArgument>
                                                   </Assign.To>
@@ -683,7 +676,7 @@
                                                     <InArgument x:TypeArguments="x:String">[mid(sKeyDay,5,2)]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <Assign DisplayName="年代入" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_59">
+                                                <Assign DisplayName="年代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_59">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[メール配信年]</OutArgument>
                                                   </Assign.To>
@@ -691,7 +684,7 @@
                                                     <InArgument x:TypeArguments="x:String">[mid(sKeyDay,1,4)]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <Assign DisplayName="時間代入" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_60">
+                                                <Assign DisplayName="時間代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_60">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[メール配信時間]</OutArgument>
                                                   </Assign.To>
@@ -699,7 +692,7 @@
                                                     <InArgument x:TypeArguments="x:String">[mid(sKeyDay,10,2)]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <Assign DisplayName="分代入" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_61">
+                                                <Assign DisplayName="分代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_61">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[メール配信分]</OutArgument>
                                                   </Assign.To>
@@ -708,7 +701,7 @@
                                                   </Assign.Value>
                                                 </Assign>
                                               </Sequence>
-                                              <Assign DisplayName="時間を削除（ログで利用）" sap:VirtualizedContainerService.HintSize="654,81" sap2010:WorkflowViewState.IdRef="Assign_95">
+                                              <Assign DisplayName="時間を削除（ログで利用）" sap:VirtualizedContainerService.HintSize="654,82" sap2010:WorkflowViewState.IdRef="Assign_95">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[sKeyDayToLog]</OutArgument>
                                                 </Assign.To>
@@ -746,54 +739,31 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </ui:InvokeWorkflowFile>
-                                                <Delay DisplayName="待機（1秒）" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_106">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Delay>
                                                 <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="クリック 'グループ配信'" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Click_645" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                                   <ui:Click.CursorPosition>
-                                                    <ui:CursorPosition OffsetX="34" OffsetY="16" Position="TopLeft" />
+                                                    <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
                                                   </ui:Click.CursorPosition>
                                                   <ui:Click.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a0146afd-64ae-4d5e-895c-faec9ff58049" InformativeScreenshot="e9ed53f93db83ce7821f510def65aa4e" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;&lt;webctrl aaname='グループ配信' tag='A' /&gt;" WaitForReady="COMPLETE">
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a0146afd-64ae-4d5e-895c-faec9ff58049" InformativeScreenshot="de75ff5101bef9d77b743ee4889e73ea" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;&lt;webctrl aaname='グループ配信' tag='A' /&gt;" WaitForReady="COMPLETE">
                                                       <ui:Target.TimeoutMS>
                                                         <InArgument x:TypeArguments="x:Int32" />
                                                       </ui:Target.TimeoutMS>
                                                     </ui:Target>
                                                   </ui:Click.Target>
                                                 </ui:Click>
-                                                <Delay DisplayName="待機（1秒）" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_101">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Delay>
                                                 <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="クリック 'INPUT'" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Click_646" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                                   <ui:Click.CursorPosition>
-                                                    <ui:CursorPosition OffsetX="60" OffsetY="8" Position="TopLeft" />
+                                                    <ui:CursorPosition OffsetX="0" OffsetY="0" Position="TopLeft" />
                                                   </ui:Click.CursorPosition>
                                                   <ui:Click.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7dff887d-fa84-4299-a607-bbb00396bbd7" InformativeScreenshot="e3cd14e95bc2f6882c828bef523088b9" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;&lt;webctrl aaname='                       ＋新規登録' tag='A' /&gt;" WaitForReady="COMPLETE">
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7dff887d-fa84-4299-a607-bbb00396bbd7" InformativeScreenshot="c6ee58c0849b364f5685eee831fe1d3d" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;&lt;webctrl aaname='                       ＋新規登録' tag='A' /&gt;" WaitForReady="COMPLETE">
                                                       <ui:Target.TimeoutMS>
                                                         <InArgument x:TypeArguments="x:Int32" />
                                                       </ui:Target.TimeoutMS>
                                                     </ui:Target>
                                                   </ui:Click.Target>
                                                 </ui:Click>
-                                                <Delay DisplayName="待機（1秒）" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_102">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Delay>
-                                                <Assign DisplayName="グループ名代入" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_46">
+                                                <Assign DisplayName="グループ名代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_46">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[グループ名]</OutArgument>
                                                   </Assign.To>
@@ -801,15 +771,7 @@
                                                     <InArgument x:TypeArguments="x:String">[argDc設定ファイル("配配メールグループ名").Replace("yyMMdd",groupday)]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <Delay DisplayName="待機（1秒）" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_125">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Delay>
-                                                <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_98">
+                                                <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_98">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[グループ名]</OutArgument>
                                                   </Assign.To>
@@ -819,7 +781,7 @@
                                                 </Assign>
                                                 <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="文字を入力 'INPUT'" sap:VirtualizedContainerService.HintSize="434,155" sap2010:WorkflowViewState.IdRef="TypeInto_99" Text="[グループ名]">
                                                   <ui:TypeInto.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3bca788a-7cd3-4924-9462-6d8ec9d59168" InformativeScreenshot="daa11a5f6300d302d49c59434d6eb57f" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;">
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3bca788a-7cd3-4924-9462-6d8ec9d59168" InformativeScreenshot="aa9d9ed381deeaa1cfeab035142234f8" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;">
                                                       <ui:Target.TimeoutMS>
                                                         <InArgument x:TypeArguments="x:Int32" />
                                                       </ui:Target.TimeoutMS>
@@ -829,32 +791,16 @@
                                                     </ui:Target>
                                                   </ui:TypeInto.Target>
                                                 </ui:TypeInto>
-                                                <Delay DisplayName="待機（1秒）" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_123">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Delay>
-                                                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="文字を入力 '背景’色" EmptyField="False" sap:VirtualizedContainerService.HintSize="434,135" sap2010:WorkflowViewState.IdRef="TypeInto_79" SendWindowMessages="False" SimulateType="True" Text="[argDc設定ファイル(&quot;配配メール背景色&quot;)]">
+                                                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="文字を入力 '背景’色" EmptyField="False" sap:VirtualizedContainerService.HintSize="434,155" sap2010:WorkflowViewState.IdRef="TypeInto_79" SendWindowMessages="False" SimulateType="True" Text="[argDc設定ファイル(&quot;配配メール背景色&quot;)]">
                                                   <ui:TypeInto.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4f3eae02-ea76-45a5-bc68-141c4865f413" InformativeScreenshot="9f8ab5c2916dc555514a908fab73c6c3" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;&lt;webctrl id='bgColorCode' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4f3eae02-ea76-45a5-bc68-141c4865f413" InformativeScreenshot="b504c29123ba48fdf81aab51adb804b0" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='bgColorCode' tableRow='6' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                                                       <ui:Target.TimeoutMS>
                                                         <InArgument x:TypeArguments="x:Int32" />
                                                       </ui:Target.TimeoutMS>
                                                     </ui:Target>
                                                   </ui:TypeInto.Target>
                                                 </ui:TypeInto>
-                                                <Delay DisplayName="待機（1秒）" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_103">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Delay>
-                                                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="項目を選択 'From'" sap:VirtualizedContainerService.HintSize="434,135" sap2010:WorkflowViewState.IdRef="SelectItem_291" Item="[argDc設定ファイル(&quot;配配メール(メールアドレス)&quot;)]">
+                                                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="項目を選択 'From'" sap:VirtualizedContainerService.HintSize="434,155" sap2010:WorkflowViewState.IdRef="SelectItem_291" Item="[argDc設定ファイル(&quot;配配メール(メールアドレス)&quot;)]">
                                                   <ui:SelectItem.Items>
                                                     <scg:List x:TypeArguments="x:String" Capacity="4">
                                                       <x:String>選択してください</x:String>
@@ -873,15 +819,7 @@
                                                     </ui:Target>
                                                   </ui:SelectItem.Target>
                                                 </ui:SelectItem>
-                                                <Delay DisplayName="待機（1秒）" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_104">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Delay>
-                                                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="項目を選択 '配信言語'" sap:VirtualizedContainerService.HintSize="434,135" sap2010:WorkflowViewState.IdRef="SelectItem_292" Item="その他の言語（UTF-8）">
+                                                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="項目を選択 '配信言語'" sap:VirtualizedContainerService.HintSize="434,155" sap2010:WorkflowViewState.IdRef="SelectItem_292" Item="その他の言語（UTF-8）">
                                                   <ui:SelectItem.Items>
                                                     <scg:List x:TypeArguments="x:String" Capacity="8">
                                                       <x:String>日本語</x:String>
@@ -902,15 +840,7 @@
                                                     </ui:Target>
                                                   </ui:SelectItem.Target>
                                                 </ui:SelectItem>
-                                                <Delay DisplayName="待機（3秒）" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_85">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Delay>
-                                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="クリック '登録'" sap:VirtualizedContainerService.HintSize="359,116" sap2010:WorkflowViewState.IdRef="Click_647" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="クリック '登録'" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Click_647" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                                   <ui:Click.CursorPosition>
                                                     <ui:CursorPosition OffsetX="10" OffsetY="15" Position="TopLeft" />
                                                   </ui:Click.CursorPosition>
@@ -922,7 +852,7 @@
                                                     </ui:Target>
                                                   </ui:Click.Target>
                                                 </ui:Click>
-                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="記録：処理終了" sap:VirtualizedContainerService.HintSize="359,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_139" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="記録：処理終了" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_139" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
                                                     <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ" xml:space="preserve">["基準日："&amp; sKeyDayToLog  &amp; "グループ配信登録処理終了"]</InArgument>
                                                     <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">[argDc設定ファイル("処理記録フォルダ")&amp;"\"]</InArgument>
@@ -2088,7 +2018,7 @@
                                                     </ui:CursorPosition>
                                                   </ui:ClickText.CursorPosition>
                                                   <ui:ClickText.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2de93a82-93e5-46e3-82a4-602cf6ccadff" InformativeScreenshot="fd8f8016cdbee630240bfbaf2a3480fe" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;&lt;webctrl id='templateText' tag='SELECT' /&gt;">
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2de93a82-93e5-46e3-82a4-602cf6ccadff" InformativeScreenshot="103a6ede4856cb35cb4af5ef600ef438" Selector="&lt;html app='chrome.exe' title='配配メール' /&gt;&lt;webctrl id='templateText' tag='SELECT' /&gt;">
                                                       <ui:Target.TimeoutMS>
                                                         <InArgument x:TypeArguments="x:Int32" />
                                                       </ui:Target.TimeoutMS>
@@ -2496,7 +2426,7 @@
                                   <av:Size x:Key="ShapeSize">200,81</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="無視されるアクティビティ" sap:VirtualizedContainerService.HintSize="450,244" sap2010:WorkflowViewState.IdRef="Sequence_383">
+                              <Sequence DisplayName="無視されるアクティビティ" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_383">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>

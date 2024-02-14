@@ -12,19 +12,19 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "iMaxDay&Sequence_1",
-        "bFlg&Sequence_1",
-        "sKeyDay&Sequence_1",
-        "d配信スケージュール&Sequence_1",
-        "b連完了ファイル&Sequence_1",
-        "sFIleName&Sequence_1",
+        "dc設定ファイル&Sequence_1",
         "sFilePath&Sequence_1",
-        "dc設定ファイル&Sequence_1"
+        "sFIleName&Sequence_1",
+        "d配信スケジュール&Sequence_1",
+        "sKeyDay&Sequence_1",
+        "bFlg&Sequence_1",
+        "iMaxDay&Sequence_1",
+        "sMessage&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
-        "argStr処理記録フォルダ",
+        "argStr設定ファイルパス",
         "argStr設定シート名",
-        "argStr設定ファイルパス"
+        "argStr処理記録フォルダ"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -33,6 +33,7 @@
       "Path": "00_ワークフロー処理/10_AsahiTsuhan/06FDM/GFDM0100.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "sErrorMessage&Flowchart_1",
         "b&Flowchart_1",
         "a&Flowchart_1",
         "dicRenkeiData&Flowchart_1",
@@ -48,15 +49,15 @@
         "sFilePath&Sequence_17"
       ],
       "ArgumentsSectionElementsOrder": [
+        "argD配信スケジュール",
         "argSKeyDay",
-        "argDc設定ファイル",
-        "argD配信スケージュール"
+        "argDc設定ファイル"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
     {
-      "Path": "00_ワークフロー処理/30_配信スケージュール/配信スケージュール取得.xaml",
+      "Path": "00_ワークフロー処理/30_配信スケジュール/配信スケジュール取得.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
         "Linking&Sequence_1",
@@ -68,11 +69,91 @@
         "gExcel&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
-        "argDc設定ファイル",
-        "argD配信スケージュール",
+        "argD配信スケジュール",
+        "argSMessage",
         "argFlg",
+        "argDc設定ファイル",
         "argSKeyDay",
         "argIMaxDay"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/設定ファイル読込.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt設定ファイル&Flowchart_1",
+        "bl設定ファイル&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "arg設定ファイルパス",
+        "argDc設定ファイル",
+        "argStr処理記録フォルダ",
+        "arg設定シート名"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/処理記録.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str処理記録ファイル名&Flowchart_1",
+        "blパス有無&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argStr記録メッセージ",
+        "argStr処理記録フォルダ"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/10_AsahiTsuhan/01MNU/GMNU0000.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "argDc設定ファイル",
+        "argBフラグ"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/10_AsahiTsuhan/06FDM/GFDM0000.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "argBフラグ"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/異常終了.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str共通処理名&Flowchart_1",
+        "imgエラーキャプチャ&Flowchart_1",
+        "strエラーメッセージ&Flowchart_1",
+        "strエラーファイル&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argDc設定ファイル",
+        "argExp異常"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/ファイルチェック.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bFlag&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argStrファイルパス"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

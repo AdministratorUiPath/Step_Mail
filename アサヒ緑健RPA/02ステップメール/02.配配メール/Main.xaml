@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.argStr設定シート名="初回(緑効mini)" this:Main.argStr設定ファイルパス="C:\アサヒ緑健RPA\01管理\10_設定\設定ファイル.xlsx" this:Main.argStr処理記録フォルダ="C:\アサヒ緑健RPA\01管理\30_処理記録" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.argStr設定シート名="サンプル(キトサン)" this:Main.argStr設定ファイルパス="C:\アサヒ緑健RPA\01管理\10_設定\設定ファイル.xlsx" this:Main.argStr処理記録フォルダ="C:\アサヒ緑健RPA\01管理\30_処理記録" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="argStr設定シート名" Type="InArgument(x:String)" />
     <x:Property Name="argStr設定ファイルパス" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>881,1771</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1231,1680</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -46,6 +46,8 @@
       <x:String>UiPath.Mail.Activities</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -104,26 +106,30 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="891,1706" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="839,1615" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[New Dictionary(of string, String)]" Name="dc設定ファイル" />
       <Variable x:TypeArguments="x:String" Name="sFilePath" />
       <Variable x:TypeArguments="x:String" Name="sFIleName" />
-      <Variable x:TypeArguments="x:Boolean" Name="b連完了ファイル" />
-      <Variable x:TypeArguments="ui:GenericValue" Name="gExcel" />
+      <Variable x:TypeArguments="x:Boolean" Name="bFlg" />
       <Variable x:TypeArguments="x:String" Name="sKeyDay" />
       <Variable x:TypeArguments="ui:GenericValue" Name="sExcecutionDate" />
+      <Variable x:TypeArguments="x:String" Name="sMessage" />
+      <Variable x:TypeArguments="x:String" Name="gExcel" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="メイン処理_トライ キャッチ" sap:VirtualizedContainerService.HintSize="829,1595" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="メイン処理_トライ キャッチ" sap:VirtualizedContainerService.HintSize="777,1504" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Flowchart DisplayName="正常処理" sap:VirtualizedContainerService.HintSize="791,1367" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+        <Flowchart DisplayName="正常処理" sap:VirtualizedContainerService.HintSize="739,1276" sap2010:WorkflowViewState.IdRef="Flowchart_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -131,8 +137,8 @@
               <av:Point x:Key="ShapeLocation">350,0</av:Point>
               <av:Size x:Key="ShapeSize">60,75</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">380,75 380,109.5</av:PointCollection>
-              <x:Double x:Key="Width">757</x:Double>
-              <x:Double x:Key="Height">1330.5</x:Double>
+              <x:Double x:Key="Width">705</x:Double>
+              <x:Double x:Key="Height">1238.800000000169</x:Double>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
@@ -152,7 +158,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[argStr処理記録フォルダ.EndsWith(&quot;\&quot;)]" DisplayName="処理記録フォルダパス\_条件分岐" sap:VirtualizedContainerService.HintSize="388,262" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[argStr処理記録フォルダ.EndsWith(&quot;\&quot;)]" DisplayName="処理記録フォルダパス\_条件分岐" sap:VirtualizedContainerService.HintSize="468,344" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,7 +184,7 @@
                   </Assign>
                 </If.Else>
               </If>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：メイン処理開始" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：メイン処理開始" sap:VirtualizedContainerService.HintSize="468,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">---------メイン処理：開始---------</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">[argStr処理記録フォルダ]</InArgument>
@@ -189,7 +195,18 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="設定ファイル読込呼出し" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\設定ファイル読込.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：argStr設定ファイルパス" sap:VirtualizedContainerService.HintSize="468,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">["argStr設定シート名：" &amp; argStr設定シート名]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">[argStr処理記録フォルダ]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="設定ファイル読込呼出し" sap:VirtualizedContainerService.HintSize="468,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\設定ファイル読込.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="arg設定ファイルパス">[argStr設定ファイルパス]</InArgument>
                   <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDc設定ファイル">[dc設定ファイル]</OutArgument>
@@ -212,28 +229,28 @@
                     <av:PointCollection x:Key="ConnectorLocation">380,440.5 380,496.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="完了ファイルの確認" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="完了ファイルの確認" sap:VirtualizedContainerService.HintSize="730,2615" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel アプリケーション スコープ" sap:VirtualizedContainerService.HintSize="606,874" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[dc設定ファイル(&quot;配信スケージュールファイルパス&quot;)]">
+                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel アプリケーション スコープ" sap:VirtualizedContainerService.HintSize="668,2504" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[dc設定ファイル(&quot;配信スケジュールファイルパス&quot;)]">
                     <ui:ExcelApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="572,764" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="634,2394" sap2010:WorkflowViewState.IdRef="Sequence_39">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ExcelReadCell Cell="B3" DisplayName="指定日" sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="[dc設定ファイル(&quot;配信スケジュールシート名&quot;)]">
+                          <ui:ExcelReadCell Cell="B3" DisplayName="指定日" sap:VirtualizedContainerService.HintSize="572,60" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="[dc設定ファイル(&quot;配信スケジュールシート名&quot;)]">
                             <ui:ExcelReadCell.Result>
-                              <OutArgument x:TypeArguments="ui:GenericValue">[gExcel]</OutArgument>
+                              <OutArgument x:TypeArguments="x:String">[gExcel]</OutArgument>
                             </ui:ExcelReadCell.Result>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -242,15 +259,15 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:ExcelReadCell>
-                          <If Condition="[gExcel is Nothing]" DisplayName="指定日がNullのとき" sap:VirtualizedContainerService.HintSize="510,553" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If Condition="[gExcel is Nothing]" DisplayName="指定日がNullのとき" sap:VirtualizedContainerService.HintSize="572,383" sap2010:WorkflowViewState.IdRef="If_14">
                             <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="476,201" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                              <Sequence sap:VirtualizedContainerService.HintSize="476,201" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap2010:Annotation.AnnotationText="指定日が入力されているとき" DisplayName="現在日付" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign sap2010:Annotation.AnnotationText="指定日が入力されているとき" DisplayName="現在日付" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_19">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[sKeyDay]</OutArgument>
                                   </Assign.To>
@@ -266,13 +283,13 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="日付：設定" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign DisplayName="日付：設定" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_20">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[sKeyDay]</OutArgument>
                                   </Assign.To>
@@ -283,37 +300,124 @@
                               </Sequence>
                             </If.Else>
                           </If>
+                          <Assign DisplayName="完了ファイル出力先" sap:VirtualizedContainerService.HintSize="572,82" sap2010:WorkflowViewState.IdRef="Assign_21">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[sFilePath]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[dc設定ファイル("完了フォルダ")]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="完了ファイル" sap:VirtualizedContainerService.HintSize="572,82" sap2010:WorkflowViewState.IdRef="Assign_22">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[sFIleName]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[sKeyDay+"_" + dc設定ファイル("配信スケジュールシート名") + ".txt"]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:PathExists Resource="{x:Null}" DisplayName="パスの存在を確認" Exists="[bflg]" sap:VirtualizedContainerService.HintSize="572,115" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[sFilePath + &quot;\&quot; + sFIleName]" PathType="File" />
+                          <If Condition="[bFlg]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="572,352" sap2010:WorkflowViewState.IdRef="If_15">
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[sMessage]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">完了ファイルが存在するためスキップ</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_35" />
+                            </If.Else>
+                          </If>
+                          <Sequence DisplayName="休日判定" sap:VirtualizedContainerService.HintSize="572,969" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:ExcelReadCell sap2010:Annotation.AnnotationText="argDc設定ファイル(&quot;配信スケジュールシート名&quot;)" Cell="B4" DisplayName="行：開始位置" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="[dc設定ファイル(&quot;配信スケジュールシート名&quot;)]">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:String">[gExcel]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:ExcelReadCell>
+                            <Assign DisplayName="セル位置：祝日" sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_24">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[gExcel]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">["F" &amp; (Integer.Parse(gExcel) + 1).ToString]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:ExcelReadCell sap2010:Annotation.AnnotationText="argDc設定ファイル(&quot;配信スケジュールシート名&quot;)" Cell="[gExcel]" DisplayName="祝日列取得" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="ExcelReadCell_7" SheetName="[dc設定ファイル(&quot;配信スケジュールシート名&quot;)]">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:String">[gExcel]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:ExcelReadCell>
+                            <If Condition="[gExcel.Length &gt; 0]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="510,474" sap2010:WorkflowViewState.IdRef="If_16">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">[bFlg]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[sMessage]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">休日のためスキップ</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_37" />
+                              </If.Else>
+                            </If>
+                          </Sequence>
                         </Sequence>
                       </ActivityAction>
                     </ui:ExcelApplicationScope.Body>
                   </ui:ExcelApplicationScope>
-                  <Assign DisplayName="完了ファイル出力先" sap:VirtualizedContainerService.HintSize="606,82" sap2010:WorkflowViewState.IdRef="Assign_4">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[sFilePath]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[dc設定ファイル("完了フォルダ")]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <Assign DisplayName="完了ファイル" sap:VirtualizedContainerService.HintSize="606,82" sap2010:WorkflowViewState.IdRef="Assign_5">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[sFIleName]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[sKeyDay+"_" + dc設定ファイル("配信スケジュールシート名") + ".txt"]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:PathExists Resource="{x:Null}" DisplayName="パスの存在を確認" Exists="[b連完了ファイル]" sap:VirtualizedContainerService.HintSize="606,115" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[sFilePath + &quot;\&quot; + sFIleName]" PathType="File" />
                 </Sequence>
                 <FlowStep.Next>
-                  <FlowDecision x:Name="__ReferenceID7" Condition="[b連完了ファイル]" DisplayName="　　　完了ファイル　　　" sap:VirtualizedContainerService.HintSize="136,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                  <FlowDecision x:Name="__ReferenceID7" Condition="[bflg]" DisplayName="　　　完了ファイル　　　" sap:VirtualizedContainerService.HintSize="136,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <av:Point x:Key="ShapeLocation">312,496.5</av:Point>
                         <av:Size x:Key="ShapeSize">136,87</av:Size>
                         <av:PointCollection x:Key="TrueConnector">312,540 210,540 210,634</av:PointCollection>
-                        <av:PointCollection x:Key="FalseConnector">448,540 550,540 550,629.5</av:PointCollection>
+                        <av:PointCollection x:Key="FalseConnector">448,540 550,540 550,619.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <FlowDecision.True>
@@ -322,7 +426,7 @@
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">110,634</av:Point>
                             <av:Size x:Key="ShapeSize">200,52</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">210,686 210,734</av:PointCollection>
+                            <av:PointCollection x:Key="ConnectorLocation">210,686 210,724</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="起動引数：指定実行日" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
@@ -340,14 +444,14 @@
                           <FlowStep x:Name="__ReferenceID8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">110,734</av:Point>
+                                <av:Point x:Key="ShapeLocation">110,724</av:Point>
                                 <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                <av:PointCollection x:Key="ConnectorLocation">210,786 210,824</av:PointCollection>
+                                <av:PointCollection x:Key="ConnectorLocation">210,776 210,814</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：スキップ" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">完了ファイルが存在するためスキップ</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">[sMessage]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">[argStr処理記録フォルダ]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
@@ -360,7 +464,7 @@
                               <FlowStep x:Name="__ReferenceID9">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <av:Point x:Key="ShapeLocation">110,824</av:Point>
+                                    <av:Point x:Key="ShapeLocation">110,814</av:Point>
                                     <av:Size x:Key="ShapeSize">200,52</av:Size>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -385,9 +489,9 @@
                       <FlowStep x:Name="__ReferenceID4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">450,629.5</av:Point>
+                            <av:Point x:Key="ShapeLocation">450,619.5</av:Point>
                             <av:Size x:Key="ShapeSize">200,81</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">550,710.5 550,772</av:PointCollection>
+                            <av:PointCollection x:Key="ConnectorLocation">550,700.5 550,762</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <Sequence DisplayName="起動引数の確認" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_9">
@@ -424,9 +528,9 @@
                           <FlowStep x:Name="__ReferenceID1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">450,772</av:Point>
+                                <av:Point x:Key="ShapeLocation">450,762</av:Point>
                                 <av:Size x:Key="ShapeSize">200,56</av:Size>
-                                <av:PointCollection x:Key="ConnectorLocation">550,828 550,884</av:PointCollection>
+                                <av:PointCollection x:Key="ConnectorLocation">550,818 550,874</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:Comment DisplayName="コメント" sap:VirtualizedContainerService.HintSize="200,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//ここから業務処理">
@@ -440,9 +544,9 @@
                               <FlowStep x:Name="__ReferenceID3">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <av:Point x:Key="ShapeLocation">450,884</av:Point>
+                                    <av:Point x:Key="ShapeLocation">450,874</av:Point>
                                     <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                    <av:PointCollection x:Key="ConnectorLocation">550,936 550,992</av:PointCollection>
+                                    <av:PointCollection x:Key="ConnectorLocation">550,926 550,982</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ワークフロー ファイルを呼び出し" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="00_ワークフロー処理\10_業務処理\配配メール_送信.xaml">
@@ -460,9 +564,9 @@
                                   <FlowStep x:Name="__ReferenceID2">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">450,992</av:Point>
+                                        <av:Point x:Key="ShapeLocation">450,982</av:Point>
                                         <av:Size x:Key="ShapeSize">200,56</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">550,1048 550,1099.5</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">550,1038 550,1089.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:Comment DisplayName="コメント" sap:VirtualizedContainerService.HintSize="200,56" sap2010:WorkflowViewState.IdRef="Comment_2" Text="//ここまで業務処理">
@@ -476,27 +580,57 @@
                                       <FlowStep x:Name="__ReferenceID0">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">450,1099.5</av:Point>
+                                            <av:Point x:Key="ShapeLocation">450,1089.5</av:Point>
                                             <av:Size x:Key="ShapeSize">200,81</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="終了処理_シーケンス" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                        <Sequence DisplayName="終了処理_シーケンス" sap:VirtualizedContainerService.HintSize="496,609" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;各位&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;本メールは、RPAから自動出力されています。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;配配メールの自動登録が正常終了しました。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;日時：&quot; &amp; Now.ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;) _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;以上になります。&quot;]" DisplayName="メール送信" Email="asahiryokuken009@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="388,268" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="cvjfupxopnqtjfng" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[dc設定ファイル(&quot;正常終了時メール件名&quot;)　&amp; &quot;（&quot; &amp;  Now.ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;)　&amp; &quot;)&quot;]" To="[dc設定ファイル(&quot;正常終了時メール通知&quot;)]">
-                                            <ui:SendMail.Files>
-                                              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                                            </ui:SendMail.Files>
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                          </ui:SendMail>
-                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：メイン処理終了" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+                                          <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="434,345" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                                            <TryCatch.Try>
+                                              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;各位&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;本メールは、RPAから自動出力されています。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;配配メールの自動登録が正常終了しました。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;日時：&quot; &amp; Now.ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;) _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;以上になります。&quot;]" DisplayName="メール送信" Email="asahiryokuken009@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,268" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="cvjfupxopnqtjfng" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[dc設定ファイル(&quot;正常終了時メール件名&quot;)　&amp; &quot;（&quot; &amp;  Now.ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;)　&amp; &quot;)&quot;]" To="[dc設定ファイル(&quot;正常終了時メール通知&quot;)]">
+                                                <ui:SendMail.Files>
+                                                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                                </ui:SendMail.Files>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:SendMail>
+                                            </TryCatch.Try>
+                                            <TryCatch.Catches>
+                                              <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="400,182" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ActivityAction x:TypeArguments="s:InvalidOperationException">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="s:InvalidOperationException" Name="exception" />
+                                                  </ActivityAction.Argument>
+                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：メイン処理終了" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+                                                    <ui:InvokeWorkflowFile.Arguments>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">設定ファイル(メール関連)に異常の可能性があります。</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">[argStr処理記録フォルダ]</InArgument>
+                                                    </ui:InvokeWorkflowFile.Arguments>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:InvokeWorkflowFile>
+                                                </ActivityAction>
+                                              </Catch>
+                                            </TryCatch.Catches>
+                                          </TryCatch>
+                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="処理記録：メイン処理終了" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">---------メイン処理：終了---------</InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">[argStr処理記録フォルダ]</InArgument>
@@ -561,7 +695,7 @@
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="795,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="743,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -684,7 +818,7 @@
                             <OutArgument x:TypeArguments="x:String">[dc設定ファイル("処理記録フォルダ")]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">C:\\アサヒ緑健RPA\\00.管理\\30_処理記録\\</InArgument>
+                            <InArgument x:TypeArguments="x:String">C:\\アサヒ緑健RPA\\01管理\\30_処理記録\\</InArgument>
                           </Assign.Value>
                         </Assign>
                       </Sequence>
@@ -750,7 +884,7 @@
                             <OutArgument x:TypeArguments="x:String">[dc設定ファイル("異常フォルダ")]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">C:\\アサヒ緑健RPA\\00.管理\\40_異常</InArgument>
+                            <InArgument x:TypeArguments="x:String">C:\\アサヒ緑健RPA\\01管理\\40_異常</InArgument>
                           </Assign.Value>
                         </Assign>
                       </Sequence>
