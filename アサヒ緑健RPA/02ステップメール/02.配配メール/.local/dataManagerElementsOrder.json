@@ -1,0 +1,144 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "gExcel&Sequence_1",
+        "bFlg&Sequence_1",
+        "sMessage&Sequence_1",
+        "sExcecutionDate&Sequence_1",
+        "dc設定ファイル&Sequence_1",
+        "sFilePath&Sequence_1",
+        "sFIleName&Sequence_1",
+        "sKeyDay&Sequence_1",
+        "imgエラーキャプチャ&Flowchart_1",
+        "エラーメッセージ&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argStr設定シート名",
+        "argStr設定ファイルパス",
+        "argStr処理記録フォルダ"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/10_業務処理/配配メール_送信.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "a&Flowchart_1",
+        "sKeyDay&Flowchart_1",
+        "ステップメールカウント&Flowchart_1",
+        "Chrome&Flowchart_1",
+        "URL&Flowchart_1",
+        "メール配信年&Flowchart_1",
+        "メール配信時間&Flowchart_1",
+        "メール配信分&Flowchart_1",
+        "dc設定ファイル&Flowchart_1",
+        "グループ名&Flowchart_1",
+        "groupday&Flowchart_1",
+        "sKeyDayToLog&Flowchart_1",
+        "oFileName&Flowchart_1",
+        "cChange&Flowchart_1",
+        "b存在チェック&Sequence_365",
+        "sHaisoDay&Flowchart_7",
+        "Texth&Flowchart_7",
+        "Text&Flowchart_7",
+        "ステップメールファイルパス&Flowchart_7",
+        "メール配信月&Flowchart_7",
+        "メール配信日&Flowchart_7",
+        "カウント&Flowchart_7",
+        "GetUrl&Sequence_358"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argSKeyDay",
+        "argDc設定ファイル"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/設定ファイル読込.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt設定ファイル&Flowchart_1",
+        "bl設定ファイル&Flowchart_1",
+        "str共通処理名&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "arg設定ファイルパス",
+        "argDc設定ファイル",
+        "argStr処理記録フォルダ",
+        "arg設定シート名"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/30_配信スケジュール/配信スケジュール取得.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Linking&Sequence_1",
+        "column&Sequence_1",
+        "row&Sequence_1",
+        "i&Sequence_1",
+        "sFIleName&Sequence_1",
+        "sKeyDay&Sequence_1",
+        "gExcel&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argD配信スケジュール",
+        "argDc設定ファイル",
+        "argFlg",
+        "argSKeyDay",
+        "argIMaxDay"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/ファイルチェック.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bFlag&Flowchart_1",
+        "variable1&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argStrファイルパス"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/30_配信スケージュール/配信スケージュール取得.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Linking&Sequence_1",
+        "column&Sequence_1",
+        "row&Sequence_1",
+        "i&Sequence_1",
+        "sFIleName&Sequence_1",
+        "sKeyDay&Sequence_1",
+        "gExcel&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argDc設定ファイル",
+        "argD配信スケジュール",
+        "argFlg",
+        "argSKeyDay",
+        "argIMaxDay"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
