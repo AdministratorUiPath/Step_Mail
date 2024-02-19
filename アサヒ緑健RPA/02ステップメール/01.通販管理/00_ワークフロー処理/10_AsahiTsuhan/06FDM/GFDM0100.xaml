@@ -727,7 +727,7 @@
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                 </ui:InvokeWorkflowFile>
-                                                                <Throw DisplayName="設定ファイル(‘除外(都道府県)’)のチェック処理でエラーが発生。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_42" />
+                                                                <Throw DisplayName="設定ファイル('除外(都道府県)')のチェック処理でエラーが発生。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_42" />
                                                               </Sequence>
                                                             </ui:IfElseIfBlock.Then>
                                                           </ui:IfElseIfBlock>
@@ -791,7 +791,7 @@
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                         </ui:InvokeWorkflowFile>
-                                                                        <Throw DisplayName="設定ファイル(‘除外(都道府県)’)には地域の入力は許可されていません。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_37" />
+                                                                        <Throw DisplayName="設定ファイル('除外(都道府県)')には地域の入力は許可されていません。" Exception="[new System.Exception]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_45" />
                                                                       </Sequence>
                                                                     </ui:IfElseIfBlock.Then>
                                                                   </ui:IfElseIfBlock>
