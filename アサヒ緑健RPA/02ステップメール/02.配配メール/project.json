@@ -1,5 +1,6 @@
 {
   "name": "ステップメール_配配メール自動登録プロジェクト",
+  "projectId": "f477c197-9109-4f4f-9989-7e50ae2557f6",
   "description": "空のプロジェクト",
   "main": "Main.xaml",
   "dependencies": {
@@ -13,7 +14,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.0.18",
+  "projectVersion": "1.0.28",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -43,7 +44,7 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [

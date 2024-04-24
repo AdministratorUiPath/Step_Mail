@@ -12,6 +12,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "sFunction&Sequence_1",
         "dc設定ファイル&Sequence_1",
         "sFilePath&Sequence_1",
         "sFIleName&Sequence_1",
@@ -33,9 +34,13 @@
       "Path": "00_ワークフロー処理/10_AsahiTsuhan/06FDM/GFDM0100.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "sPrefecturesShortage&Flowchart_1",
+        "sPrefectures&Flowchart_1",
         "sErrorMessage&Flowchart_1",
-        "b&Flowchart_1",
-        "a&Flowchart_1",
+        "sRegion&Flowchart_1",
+        "sSplit&Flowchart_1",
+        "sBefore&Flowchart_1",
+        "sAfter&Flowchart_1",
         "dicRenkeiData&Flowchart_1",
         "iCnt&Flowchart_1",
         "sHaisoDay&Flowchart_1",
@@ -99,6 +104,7 @@
       "Path": "00_ワークフロー処理/20_汎用処理/処理記録.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str処理記録フォルダ&Flowchart_1",
         "str処理記録ファイル名&Flowchart_1",
         "blパス有無&Flowchart_1"
       ],
@@ -140,6 +146,7 @@
         "strエラーファイル&Flowchart_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "argSFunction",
         "argDc設定ファイル",
         "argExp異常"
       ],
@@ -154,6 +161,20 @@
       ],
       "ArgumentsSectionElementsOrder": [
         "argStrファイルパス"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "00_ワークフロー処理/20_汎用処理/正常終了.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "blパス有無&Flowchart_1",
+        "sTextValue&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argDc設定ファイル",
+        "argSFunction"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

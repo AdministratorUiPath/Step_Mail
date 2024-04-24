@@ -2,14 +2,17 @@
   <x:Members>
     <x:Property Name="argDc設定ファイル" Type="InArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="argExp異常" Type="InArgument(s:Exception)" />
+    <x:Property sap2010:Annotation.AnnotationText="ID：R0014 既存バグの修正" Name="argSFunction" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>604,882</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1186,905</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>異常終了_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
       <x:String>Microsoft.VisualBasic.Activities</x:String>
       <x:String>System</x:String>
@@ -27,6 +30,7 @@
       <x:String>System.IO</x:String>
       <x:String>System.Linq</x:String>
       <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Xml</x:String>
       <x:String>System.Xml.Linq</x:String>
@@ -35,18 +39,21 @@
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
-      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="72">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>PresentationCore</AssemblyReference>
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
@@ -56,6 +63,11 @@
       <AssemblyReference>System.Net.Mail</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
@@ -65,12 +77,20 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-    </sco:Collection>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="異常終了" sap:VirtualizedContainerService.HintSize="614,817" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Flowchart DisplayName="異常終了" sap:VirtualizedContainerService.HintSize="634,840" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Default="異常終了" Name="str共通処理名" />
       <Variable x:TypeArguments="ui:Image" Name="imgエラーキャプチャ" />
@@ -90,15 +110,15 @@
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID5</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID0">
+    <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">101,711</av:Point>
-          <av:Size x:Key="ShapeSize">200,92</av:Size>
+          <av:Size x:Key="ShapeSize">200,83</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">310,198.5 310,228.5 309.895,228.5 309.895,248.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="処理記録.xaml 呼び出し" DisplayName="処理記録終了" sap:VirtualizedContainerService.HintSize="200,92" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="処理記録.xaml 呼び出し" DisplayName="処理記録終了" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">[str共通処理名 &amp; "：終了"]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">[argDc設定ファイル("処理記録フォルダ")]</InArgument>
@@ -111,15 +131,15 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID5">
+    <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">100,125</av:Point>
-          <av:Size x:Key="ShapeSize">200,92</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">200,217 200,247 201,247 201,267</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,83</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">200,208 200,238 201,238 201,267</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="処理記録.xaml 呼び出し" DisplayName="処理記録開始" sap:VirtualizedContainerService.HintSize="200,92" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="処理記録.xaml 呼び出し" DisplayName="処理記録開始" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">[str共通処理名 &amp; "：開始"]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="argStr処理記録フォルダ">[argDc設定ファイル("処理記録フォルダ")]</InArgument>
@@ -132,17 +152,17 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID1">
+        <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">101,267</av:Point>
-              <av:Size x:Key="ShapeSize">200,61</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">201,328 201,378</av:PointCollection>
+              <av:Size x:Key="ShapeSize">200,52</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">201,319 201,378</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="エラーキャプチャ" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[imgエラーキャプチャ]">
+          <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="エラーキャプチャ" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[imgエラーキャプチャ]">
             <ui:TakeScreenshot.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="3ec1c62f-99e9-4a73-980a-641f0f59cb5b">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2b16a199-5420-452a-8b46-e39a3b3310a3">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -158,15 +178,15 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:TakeScreenshot>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID2">
+            <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">101,378</av:Point>
-                  <av:Size x:Key="ShapeSize">200,61</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">201,439 201,489</av:PointCollection>
+                  <av:Size x:Key="ShapeSize">200,52</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">201,430 201,489</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:SaveImage DisplayName="エラーキャプチャを保存" FileName="[strエラーファイル &amp; &quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[imgエラーキャプチャ]">
+              <ui:SaveImage DisplayName="エラーキャプチャを保存" FileName="[strエラーファイル &amp; &quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[imgエラーキャプチャ]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -174,15 +194,15 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:SaveImage>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID3">
+                <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">101,489</av:Point>
-                      <av:Size x:Key="ShapeSize">200,61</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">201,550 201,600</av:PointCollection>
+                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">201,541 201,600</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:WriteTextFile File="{x:Null}" DisplayName="エラー内容出力" FileName="[strエラーファイル &amp; &quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strエラーメッセージ]">
+                  <ui:WriteTextFile File="{x:Null}" DisplayName="エラー内容出力" FileName="[strエラーファイル &amp; &quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strエラーメッセージ]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -190,15 +210,15 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:WriteTextFile>
                   <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID4">
+                    <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">101,600</av:Point>
-                          <av:Size x:Key="ShapeSize">200,61</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">201,661 201,711</av:PointCollection>
+                          <av:Size x:Key="ShapeSize">200,52</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">201,652 201,711</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;各位&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;本メールは、RPAから自動出力されています。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;対象システム：RPA通販管理システム顧客データ抽出&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; argDc設定ファイル(&quot;処理名&quot;) &amp; &quot;の処理が異常終了しました。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;メッセージ：&quot; &amp; argExp異常.Message _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp;&quot;対象処理：&quot; &amp; argExp異常.Source &amp; _&#xA;Environment.NewLine &amp; Environment.NewLine &amp; _&#xA;&quot;詳細：&quot; &amp; argExp異常.ToString &amp; _&#xA;Environment.NewLine &amp; Environment.NewLine &amp; _&#xA;&quot;エラー内容にて原因が不明である場合、システム管理者へご連絡下さい。&quot;]" DisplayName="メール送信" Email="asahiryokuken009@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,61" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="cvjfupxopnqtjfng" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[argDc設定ファイル(&quot;エラー発生時メール件名&quot;)　&amp; &quot;（&quot; &amp;  Now.ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;)　&amp; &quot;)&quot;]" To="[argDc設定ファイル(&quot;エラー発生時メール通知&quot;)]">
+                      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;各位&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;本メールは、RPAから自動出力されています。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;対象システム：&quot; &amp; argSFunction _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; argDc設定ファイル(&quot;処理名&quot;) &amp; &quot;の処理が異常終了しました。&quot; _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp; &quot;メッセージ：&quot; &amp; argExp異常.Message _&#xA;&amp; Environment.NewLine &amp; Environment.NewLine _&#xA;&amp;&quot;対象処理：&quot; &amp; argExp異常.Source &amp; _&#xA;Environment.NewLine &amp; Environment.NewLine &amp; _&#xA;&quot;詳細：&quot; &amp; argExp異常.ToString &amp; _&#xA;Environment.NewLine &amp; Environment.NewLine &amp; _&#xA;&quot;エラー内容にて原因が不明である場合、システム管理者へご連絡下さい。&quot;]" DisplayName="メール送信" Email="asahiryokuken009@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="cvjfupxopnqtjfng" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[argDc設定ファイル(&quot;エラー発生時メール件名&quot;)　&amp; &quot;（&quot; &amp;  Now.ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;)　&amp; &quot;)&quot;]" To="[argDc設定ファイル(&quot;エラー発生時メール通知&quot;)]">
                         <ui:SendMail.Files>
                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                         </ui:SendMail.Files>
