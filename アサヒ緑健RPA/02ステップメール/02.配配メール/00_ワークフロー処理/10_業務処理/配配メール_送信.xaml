@@ -133,7 +133,11 @@
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="ステップメールカウント" />
       <Variable x:TypeArguments="ui:Browser" Name="Chrome" />
-      <Variable x:TypeArguments="x:String" Default="https://a01.hm-f.jp/512/index.php" Name="URL" />
+      <Variable x:TypeArguments="x:String" Name="URL">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">https://b180.hm-f.jp/CheXLf/index.php</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="メール配信年" />
       <Variable x:TypeArguments="x:String" Name="メール配信時間" />
       <Variable x:TypeArguments="x:String" Name="メール配信分" />
@@ -2570,7 +2574,7 @@
           <av:PointCollection x:Key="ConnectorLocation">200,206 200,236 201,236 201,265</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="初期起動チェック" sap:VirtualizedContainerService.HintSize="563,1083" sap2010:WorkflowViewState.IdRef="Sequence_365">
+      <Sequence DisplayName="初期起動チェック" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_365">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Default="False" Name="b存在チェック" />
         </Sequence.Variables>
@@ -2592,7 +2596,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:Comment DisplayName="ID：R0014" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// ADD START&#xD;&#xA;2024/1/26 Hirabaru&#xD;&#xA;既存バグの修正" />
+                    <ui:Comment DisplayName="ID：R0014" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// ADD START&#xA;2024/1/26 Hirabaru&#xA;既存バグの修正" />
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="記録：処理開始" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_151" UnSafe="False" WorkflowFileName="00_ワークフロー処理\20_汎用処理\処理記録.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="argStr記録メッセージ">配配メール連携ファイルが存在しません。</InArgument>
